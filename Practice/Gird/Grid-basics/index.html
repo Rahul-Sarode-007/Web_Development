@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+            height: 600px;
+            width: 600px;
+        }
+
+        .container > div{
+            background-color: blue;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-1 card"></div>
+        <div class="box-2 card"></div>
+        <div class="box-3 card"></div>
+        <div class="box-4 card"></div>
+
+    </div>
+</body>
+</html>
