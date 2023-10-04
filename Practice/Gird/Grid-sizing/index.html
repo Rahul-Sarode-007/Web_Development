@@ -5,14 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid Sizing</title>
     <style>
+
+/* 1. Fixed */
+
+        /*
         .container{
             display: grid;
-           
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: 1fr 2fr;
+            grid-template-rows: 100px 200px;
+            grid-template-columns: 100px 200px;
             gap: 10px;
-            border: 1px solid black;
-            grid-auto-rows: 300px;
+        } */
+
+
+/* 2. Auto */
+
+        /* .container{
+            display: grid;
+            grid-template-rows: 100px auto;
+            grid-template-columns: 100px auto;
+            gap: 10px;
+        } */
+
+
+/* 3. Fractional Scaling */
+
+        /* .container{
+            display: grid;
+            gap:10px;
+            grid-template-rows: 1fr 2fr;
+            grid-template-columns: 1fr 2fr;
+            grid-auto-rows: 100px;
+        } */
+
+/* 4. minmax scaling */
+
+
+        /* .container{
+            display: grid;
+            gap: 10px;
+            grid-template-rows: 100px minmax(100px, 200px);
+            grid-template-columns: 100px minmax(200px, 400px);
+            grid-auto-rows: 150px;
+            border: 2px solid black;
+        } */
+
+
+/* 5. Repeat() */
+
+        .container{
+            display: grid;
+            gap: 10px;
+            grid-template-rows: repeat(2, 200px);
+            grid-template-columns: repeat(2, 100px);
+            grid-auto-rows: 50px;
         }
 
         .grid-item{
