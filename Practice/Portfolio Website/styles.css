@@ -82,12 +82,13 @@ body {
 /* Section 2 */
 
 .about-me {
-    background-color: #304ab2;
+    background-color: #7d70b7;
     padding: 20px 170px;
 }
 
 .about-me h2 {
     color: #5bc3d3;
+    color: #565194;    
     text-align: center;
     font-size: 30px;
 }
@@ -103,3 +104,36 @@ body {
     color: white;
     font-size: 24px;
 }
+
+
+/* *********************Section 3********************* */
+
+.experience{
+    background: #9385d4 ;
+    padding: 30px 0px;
+}
+
+.experience h2{
+    margin-top: 0;
+    color: #5bc3d3;
+    color: #565194;    
+    text-align: center;
+    font-size: 30px;
+}
+
+.experience-positions{
+    margin: 0px 170px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+    
+}
+
+.experience-positions > *{
+    color: white;
+    font-size: 18px;
+}
+
+
+/* *********************Section 4********************* */
