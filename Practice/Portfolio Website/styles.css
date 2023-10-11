@@ -83,14 +83,16 @@ body {
 
 .about-me {
     background-color: #7d70b7;
-    padding: 20px 170px;
+    padding: 30px 170px;
 }
 
 .about-me h2 {
-    color: #5bc3d3;
+    /* color: #5bc3d3; */
     color: #565194;    
     text-align: center;
     font-size: 30px;
+    margin-bottom: 0;
+    padding-bottom: 30px;
 }
 
 .profile-pic {
@@ -98,11 +100,13 @@ body {
     width: 150px;
     border-radius: 50%;
     margin: auto;
+    padding-bottom: 30px;
 }
 
 .about-me p {
     color: white;
-    font-size: 24px;
+    font-size: 18px;
+    padding-bottom: 40px;
 }
 
 
@@ -110,19 +114,18 @@ body {
 
 .experience{
     background: #9385d4 ;
-    padding: 30px 0px;
+    padding: 30px 170px;
 }
 
 .experience h2{
     margin-top: 0;
-    color: #5bc3d3;
+    /* color: #5bc3d3; */
     color: #565194;    
     text-align: center;
     font-size: 30px;
 }
 
 .experience-positions{
-    margin: 0px 170px;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: repeat(4, auto);
@@ -137,3 +140,31 @@ body {
 
 
 /* *********************Section 4********************* */
+.my-projects{
+    background-color: #9b8ed6;
+    padding: 30px 170px;
+}
+
+.my-projects h2{
+    color: #565194;    
+    text-align: center;
+    font-size: 30px; 
+    padding-bottom: 30px;  
+}
+
+.projects-pic-and-description{
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects-pic-and-description img{
+    width: 250px;
+    padding-bottom: 30px;
+}
+
+.my-projects p{
+    color: white;
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
