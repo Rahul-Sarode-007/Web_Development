@@ -67,9 +67,7 @@ body {
 }
 
 .subtitle h2 {
-    /* color: #f7ad86;
-    color: #ff3c88;
-    color: #9e3c83; */
+
     color: #565194;    
     margin-left: 170px;
     font-size: 32px;
@@ -88,7 +86,8 @@ body {
 
 .about-me h2 {
     /* color: #5bc3d3; */
-    color: #565194;    
+    color: #3c3697;
+
     text-align: center;
     font-size: 30px;
     margin-bottom: 0;
@@ -120,7 +119,8 @@ body {
 .experience h2{
     margin-top: 0;
     /* color: #5bc3d3; */
-    color: #565194;    
+    color: #3c3697;
+
     text-align: center;
     font-size: 30px;
 }
@@ -146,7 +146,8 @@ body {
 }
 
 .my-projects h2{
-    color: #565194;    
+    color: #3c3697;
+
     text-align: center;
     font-size: 30px; 
     padding-bottom: 30px;  
@@ -168,3 +169,55 @@ body {
     padding-bottom: 30px;
 }
 
+
+/* *********************Section 5********************* */
+
+#footer{
+    background: #b4a3f5 ;
+    padding: 30px 170px;
+}
+
+.my-footer > h2{
+    color: #3c3697;
+
+    text-align: center;  
+    font-size: 30px;
+    padding-bottom: 5px;
+
+}
+
+.social-links{
+    display: flex;
+    font-size: 32px;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 30px;
+}
+
+.social-links > a{
+    color: #3c3697;
+
+}
+
+.footer-links{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.footer-links > a{
+    text-decoration: none;
+    color: #3c3697;
+
+}
+
+.footer-links > a > li{
+    list-style-type: none;
+}
+
+.copyright{
+    text-align: center;
+    color: #3c3697;
+
+}
