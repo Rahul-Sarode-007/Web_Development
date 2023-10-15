@@ -255,7 +255,18 @@ body {
         font-size: 7px;
 
     }
+
     /* ********************Section 1************************ */
+
+    .hero-section {
+        height: auto;
+
+    }
+
+    .site-logo {
+        width: 15rem;
+        align-self: flex-start;
+    }
 
     .nav-bar {
         gap: 5rem;
