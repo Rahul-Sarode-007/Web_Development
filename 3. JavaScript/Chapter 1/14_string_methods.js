@@ -36,6 +36,18 @@ for (let i=0; i<sumString.length; i++){
 console.log(sumString1)
 
 
+/*
+
+Write a prorame to chane original string
+String are immutable we can not name the original string
+*/
+
+let originalString = "Welcome!"
+originalString[4] = "a"
+
+console.log(originalString)
+
+
 
 
 
