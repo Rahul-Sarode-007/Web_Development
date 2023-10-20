@@ -108,4 +108,39 @@ const countVowels = (string5)=>{
 console.log(countVowels("Rahul"))
 
 
+/******************************************************************
+5. Find the Longest Word:
+Write a function to find the longest word in a sentence.
+ ****************************************************************/
 
+console.log("**********************************")
+console.log("Finding the Longest Word")
+
+let newString = ""
+let newLogestString = ""
+
+const longestWord = (strSentance) =>{
+    for (let i= 0 ; i<strSentance.length;i++){
+        if (strSentance[i] === " "){
+            if (newLogestString.length < newString.length) {
+                newLogestString = newString
+            }
+            newString = ""
+            
+        }
+
+        else{
+            newString += strSentance[i]
+        }
+       
+   }
+
+   if (newLogestString.length < newString.length) {
+    newLogestString = newString
+
+}
+
+   return newLogestString;
+}
+
+console.log(longestWord("Hello Everyone my name is Rahul"))
