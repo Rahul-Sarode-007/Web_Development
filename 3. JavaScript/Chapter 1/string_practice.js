@@ -144,3 +144,67 @@ const longestWord = (strSentance) =>{
 }
 
 console.log(longestWord("Hello Everyone my name is Rahul"))
+
+
+/***************************************************************
+6. Check for Anagrams:
+Write a function to determine if two strings are anagrams of each other.
+****************************************************************/
+
+/*Anagrams Partially solved */
+
+let newStr2 = ""
+const stringAnagrams = (str1,str2) => {
+
+let count = 0;
+let str3 = str2.length
+
+    if (str1.length == str2.length){
+        for (let i=0; i<str1.length; i++){
+            
+            for (let j = 0; j<str2.length; j++){
+                if (str1[i]===str2[j]){
+                    // console.log("Matched", str2[j])
+
+
+                    //Removing that char for str2 (need to work on this logic)
+                    //strings are immutable
+                    for (let k = 0; k<str3; k++){
+                        
+                        if(str2[j] == str2[k]){
+
+                        }
+                        else{
+                            newStr2 += str2[k]
+                        }
+                    }
+
+                }
+                else{
+                    // console.log("not matched", str1[i])
+                    count += 1
+                }
+            }
+            //condition 2: checking str1 character present in str2 if not program terminate (not anagrams) 
+            if (count == str2.length){
+                return "The given string is not a anagrams, charcter not present"
+            }
+            else{
+                count = 0
+            }
+        }
+        
+    }
+    
+    
+    //condition 1: Checking if both string has the same length if not the program terminate (not a anagrams)
+    else{
+        return "The given string is not a anagrams, both strings has different length"
+    }
+    return "The given string is anagrams"
+   
+}
+
+console.log(stringAnagrams(str1="race", str2 ="care"))
+console.log(newStr2)
+
