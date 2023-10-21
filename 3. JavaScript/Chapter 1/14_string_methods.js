@@ -1,5 +1,6 @@
 let fname = "Rahul"
 let sname = "Sarode"
+let sentance = "Hello my name is Rahul"
 
 console.log(fname.length)
 
@@ -17,6 +18,13 @@ console.log(fname.concat(" ",sname))
 let newName = "               Meena              "
 
 console.log(newName.trim())
+
+
+console.log(sentance.includes("is"))
+
+console.log(sentance.startsWith("Hello"))
+
+console.log(sentance.endsWith("Rahul"))
 
 
 
