@@ -38,6 +38,7 @@ console.log("****************************************************")
 let num
 
 num = prompt("Please enter the number")
+num = Number.parseInt(num)
 
  if (num > 4) {
     location.href = "http://www.google.com";
