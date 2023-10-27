@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking The DOM</title>
+</head>
+<script>
+    // Will return null as script tag is return before the body tag
+    console.log(document.body)
+</script>
+<body>
+    <h1 class="main-heading">
+        Hello World!
+    </h1>
+    <!-- Auto correction - Browser will auto correct the closing tag -->
+    <span>This is me</span>
+    <ul>
+        <li class="my-list-item">One</li>
+        <li class="my-list-item">Two</li>
+        <li class="my-list-item">Three</li>
+
+    </ul> 
+    <script src="script.js"></script>
+</body>
+</html>
