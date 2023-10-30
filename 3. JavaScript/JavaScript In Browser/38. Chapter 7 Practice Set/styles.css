@@ -1,0 +1,24 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    background-color: grey;
+    padding: 10px 0;
+}
+.navbar-list{
+    display: flex;
+    gap: 100px;   
+    margin-top: 0;
+}
+
+.navbar-list{
+list-style-type: none;
+}
+
+.navbar-items a{
+    text-decoration: none;
+    color: black
+}
+
