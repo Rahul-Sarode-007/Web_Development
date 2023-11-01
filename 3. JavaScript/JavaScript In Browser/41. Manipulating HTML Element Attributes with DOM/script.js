@@ -19,3 +19,18 @@ document.querySelector("a").getAttribute("class")
 //we can set the attribute value
 document.querySelector("a").setAttribute("href", "https://www.bing.com")
 //Returns - 'https://www.google.com'
+
+//check if element has the attribute, return boolean
+console.log(document.querySelector("a").hasAttribute("href"))
+
+//we can remove an attribute
+document.querySelector("a").removeAttribute("href")
+
+//add and modify using set attribute method
+document.querySelector("a").setAttribute("href", "https://www.bing.com")
+
+//check custom attribute
+console.log(document.querySelector("input").dataset.game)
+
+
+

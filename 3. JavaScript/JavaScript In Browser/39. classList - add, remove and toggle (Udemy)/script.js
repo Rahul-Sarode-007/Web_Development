@@ -7,6 +7,13 @@ document.querySelector(".btn").classList.add("invisible")
 
 document.querySelector(".btn").classList.remove("invisible")
 
+document.querySelector("#title").classList.toggle("huge")
 
-document.querySelector("#title").classList.add("huge")
+
+//replace entire class string
+document.querySelector("#title").className = "red text-color-white"
+
+
+//Return boolean based on if the class present in selected element
+console.log(document.querySelector("#title").classList.contains("red"))
 
