@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Chivo Mono', monospace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+    background-color: #2a2a41;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    background-color: #2a2a41;
+
+    color: white;
+    height: 300px;
+    width: 600px;
+    font-size: 32px;
+
+    border: 3px solid #5f76c7;
+
+}
+
