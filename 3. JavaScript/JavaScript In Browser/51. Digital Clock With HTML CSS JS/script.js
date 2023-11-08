@@ -26,6 +26,3 @@ const digitalClock = () =>{
 }
 
 setInterval(digitalClock,1000)
-
-
-document.querySelector("h1").style.color = "red"
