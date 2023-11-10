@@ -11,6 +11,7 @@ function loadScript (url, Callbacks){
     script.src = url  
 
     //Onload is function in JS
+
     script.onload = function () {
         console.log("Script Loaded")
 
@@ -18,17 +19,23 @@ function loadScript (url, Callbacks){
         Callbacks(url)
     }
 
+
+    script.onerror = function(){
+        console.log("We are facing some error")
+    }
+
     //Appeneding element just before closing body tag
     document.body.append(script)
+    
 }
 
 
 function hello (a){
-    alert("The URL Is: "+ a)
+    alert("The URL Is: " + a)
 }
 
 function goodmorning(a){
-    alert("goodmorning "+ a)
+    alert("goodmorning " + a)
 }
 
-loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", hello)
+loadScript("https://cdn.ajsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", hello)
