@@ -16,12 +16,13 @@ function loadScript (url, Callbacks){
         console.log("Script Loaded")
 
         //calling "hello" fuction
-        Callbacks(url)
+        Callbacks(null,url)
     }
 
 
     script.onerror = function(){
         console.log("We are facing some error")
+        Callbacks(new Error ("ssrc got some error"))
     }
 
     //Appeneding element just before closing body tag
@@ -30,12 +31,20 @@ function loadScript (url, Callbacks){
 }
 
 
-function hello (a){
+function hello (error,a){
+    if(error){
+        console.error(error)
+        return
+    }
     alert("The URL Is: " + a)
 }
 
-function goodmorning(a){
+function goodmorning(err,a){
+    if(err){
+        console.log(err)
+        return
+    }
     alert("goodmorning " + a)
 }
 
-loadScript("https://cdn.ajsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", hello)
+loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", goodmorning)
