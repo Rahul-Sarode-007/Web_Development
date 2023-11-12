@@ -33,8 +33,25 @@ console.log(changedArray)
 
 
 
+//Quetion 2
 
 
+const operations = (opr, n1,n2) =>{
+    return opr(n1,n2)
+
+}
+
+const sum = (num1,num2) =>{
+    return num1+num2
+}
+
+const minus = (num1,num2) =>{
+    return num1-num2
+
+}
+
+console.log(operations(sum,10,20))
+console.log(operations(minus,10,20))
 
 
 

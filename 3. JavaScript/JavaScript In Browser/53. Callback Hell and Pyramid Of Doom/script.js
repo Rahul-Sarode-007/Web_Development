@@ -110,3 +110,79 @@ loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundl
         })
     })
 })
+
+
+
+// //Example 2
+// const makingOmlet = ()=>{
+//     setTimeout(()=>{
+//     console.log("We are today making the omlet")
+//     },1000)
+// }
+
+// const crackEggs = () =>{
+//     setTimeout(()=>{
+//         console.log("cracking the eggs")
+//     },2000)
+// }
+
+// const beatEggs = () =>{
+//     setTimeout(()=>{
+//         console.log("beating the eggs")
+//     },3000)
+// }
+
+// const cookOmlet = () =>{
+//     setTimeout(()=>{
+//         console.log("cooking the eggs")
+//     },4000)
+// }
+
+// const servingOmlet = () =>{
+//     setTimeout(()=>{
+//         console.log("serving the eggs")
+//     },5000)
+// }
+
+// makingOmlet(
+//     crackEggs(
+//         beatEggs(
+//             cookOmlet(
+//                 servingOmlet()
+//             )
+//         )
+//     )
+// )
+
+
+
+
+// //Attempt 2
+
+// function crackEggs(callback) {
+//     console.log("Step 1: Crack the eggs");
+//     setTimeout(callback, 1000); // Simulating asynchronous task
+// }
+
+// function beatEggs(callback) {
+//     console.log("Step 2: Beat the eggs");
+//     setTimeout(callback, 1000);
+// }
+
+// function cookOmelet(callback) {
+//     console.log("Step 3: Cook the omelet");
+//     setTimeout(callback, 1000);
+// }
+
+// function serveOmelet() {
+//     console.log("Step 4: Serve the omelet");
+// }
+
+// // Callback hell
+// crackEggs(function () {
+//     beatEggs(function () {
+//         cookOmelet(function () {
+//             serveOmelet();
+//         });
+//     });
+// });
