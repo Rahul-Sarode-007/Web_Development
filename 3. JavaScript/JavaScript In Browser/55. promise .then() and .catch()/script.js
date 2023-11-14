@@ -20,7 +20,9 @@ let p2 = new Promise((resolve,reject)=>{
 // console.log(p1,p2)
 
 
-
+/*
+Instance Methods:
+*/
 .then()
 p1.then((value)=>{
     console.log(value)
