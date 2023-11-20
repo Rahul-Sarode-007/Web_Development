@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color:hsl(186, 14%, 43%);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;   
+
+}
+
+body{
+    background-color: hsl(185, 41%, 84%); 
+    height: 100vh;
+}
+
+h1{
+    font-size: 32px;
+    text-align: center;
+    padding: 40px 0;
+    color: hsl(183, 100%, 15%);
+}
+
+.container{
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    
+}
+
+.userInputContainer{
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: white;
+    height: 380px;
+    width: 380px;
+    padding: 40px;
+    position: relative;
+
+}
+
+input{
+    background-color: hsl(189, 41%, 97%);
+    text-align: right;
+    border: 0;
+    width: 100%;
+    height: 30px;
+    padding-right: 20px;
+    font-size: 16px;
+    color: black;
+}
+
+input::placeholder{
+    position: relative;
+    font-size: 16px;
+}
+
+input:focus{
+    outline: 2px solid hsl(183, 100%, 15%);
+}
+
+.card1-div1>img{
+    position: absolute;
+    top: 78px;
+    left: 50px;
+}
+
+.userInputContainer p{
+    margin-bottom: 10px;
+}
+
+.tipContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card1-div2 input[value]{
+    background-color: hsl(183, 100%, 15%);   
+    color: white;
+    text-align: center;
+    padding: 0;
+    font-size: 16px;
+}
+
+.card1-div2 input::placeholder{
+    background-color: hsl(189, 41%, 97%);   
+    color: hsl(186, 14%, 43%);
+    font-size: 16px;
+}
+
+.card1-div3 img{
+    position: absolute;
+    top: 317px;
+    left: 50px;
+}
+
+/****************************************************************** */
+
+
+.outter-outputContainer{
+    box-sizing: border-box;
+    height: 380px;
+    width: 380px;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+}
+
+.outputContainer{
+    height: 320px;
+    width: 320px;
+    background-color: hsl(183, 100%, 15%);
+    position: relative;
+    padding: 35px 30px;
+    border-radius: 16px;
+}
+
+
+.outputContainer p:not(:last-child){
+    color: white;
+    font-size: 14px;
+}
+
+.outputContainer p>span{
+    font-size: 12px;
+}
+
+.tip-amount-dollor-span, .tip-amount-person-span{   
+    color: hsl(172, 67%, 45%);
+    font-size: 30px;
+}
+
+.tip-amount, .total{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.reset-btn button{
+    position: absolute;
+    bottom: 30px;
+    width: 260px;
+    height: 30px;
+    background-color: #0d686d;
+    border: none;
+}
