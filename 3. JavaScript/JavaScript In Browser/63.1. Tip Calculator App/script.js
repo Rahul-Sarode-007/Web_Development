@@ -54,9 +54,11 @@ const calculatePerPerson = () => {
 
   if(numPeopleValue==0){
     document.querySelector(".can_not_zero").style.visibility = "visible"
+    document.querySelector(".num_people").style.outline = "2px solid #ca6b4e";
   }
   if(numPeopleValue!=0){
     document.querySelector(".can_not_zero").style.visibility = "hidden"
+    document.querySelector(".num_people").style.outline = "2px solid #9fe8df";
   }
 
 
@@ -77,6 +79,7 @@ const calculatePerPerson = () => {
       "$" + perPersonTip.toFixed(2);
   }
 
+  
   if(isFinite(tolAmtValue) &&  isFinite(numPeopleValue) && isFinite(selectedTipAmt)){
     myBtn.style.background = "#26c2ad";
   }
@@ -101,9 +104,8 @@ myBtn.addEventListener("click", () => {
     document.querySelector(".tip-amount-dollor-span").innerHTML = "$0.00";
     document.querySelector(".can_not_zero").style.visibility = "hidden"
     myBtn.style.background = "#0d686d"
+    document.querySelector(".num_people").style.outline = "2px solid #9fe8df";
   });
 });
 
-if(isFinite(tolAmtValue) &&  isFinite(numPeopleValue) && isFinite(selectedTipAmt)){
-  myBtn.style.background = "#26c2ad";
-}
+

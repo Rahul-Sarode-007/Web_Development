@@ -1,36 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
-    color:hsl(186, 14%, 43%);
     font-family: 'Space Mono', monospace;
     font-size: 14px;
-    font-weight: 700;   
+    font-weight: 700;
 
 }
 
-body{
-    background-color: hsl(185, 41%, 84%); 
+body {
+    background-color: hsl(185, 66%, 81%);
     height: 100vh;
 }
 
 
-h1{
+h1 {
     font-size: 32px;
-    text-align: center;
-    padding: 40px 0;
-    color: hsl(183, 100%, 15%);
-}
-
-.container{
     display: flex;
-    justify-content: center;   
+    justify-content: center;
     align-items: center;
-    
+    color: hsl(183, 100%, 15%);
+    height: 20vh;
 }
 
-.userInputContainer{
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+
+}
+
+.userInputContainer {
     border-radius: 20px 0 0 20px;
     display: flex;
     flex-direction: column;
@@ -44,7 +46,7 @@ h1{
 
 }
 
-input{
+input {
     background-color: hsl(189, 41%, 97%);
     text-align: right;
     border: 0;
@@ -54,29 +56,32 @@ input{
     font-size: 16px;
     color: hsl(183, 100%, 15%);
     cursor: pointer;
+    border-radius: 3px;
+
 
 }
 
-input::placeholder{
+input::placeholder {
     position: relative;
     font-size: 16px;
 }
 
-input:focus{
-    outline: 2px solid #9fe8df; 
+input:focus {
+    outline: 2px solid #9fe8df;
 }
 
-.card1-div1>img{
+.card1-div1>img {
     position: absolute;
     top: 78px;
     left: 50px;
 }
 
-.userInputContainer p{
+.userInputContainer p {
     margin-bottom: 10px;
+    color: hsl(183, 100%, 15%);
 }
 
-.tipContainer{
+.tipContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -84,47 +89,48 @@ input:focus{
 
 
 
-.card1-div2 input[value]{
-    background-color: hsl(183, 100%, 15%);   
+.card1-div2 input[value] {
+    background-color: hsl(183, 100%, 15%);
     color: white;
     text-align: center;
     padding: 0;
     font-size: 16px;
 }
 
-.card1-div2 input[value]:hover{
+.card1-div2 input[value]:hover {
     background-color: #9fe8df !important
 }
 
-.card1-div2 input::placeholder{
+.card1-div2 input::placeholder {
     /* background-color: hsl(189, 41%, 97%);    */
     color: hsl(186, 14%, 43%);
     font-size: 16px;
 }
 
 
-.card1-div3 img{
+.card1-div3 img {
     position: absolute;
     top: 317px;
     left: 50px;
 }
 
-.card1-title3{
+.card1-title3 {
     display: inline;
 }
 
-.can_not_zero{
+.can_not_zero {
     display: inline;
     visibility: hidden;
-    visibility: visible;
+    /* visibility: visible; */
     position: relative;
     left: 42px;
     color: #ca6b4e;
 }
+
 /****************************************************************** */
 
 
-.outter-outputContainer{
+.outter-outputContainer {
     box-sizing: border-box;
     height: 380px;
     width: 380px;
@@ -136,7 +142,7 @@ input:focus{
     border-radius: 0 20px 20px 0;
 }
 
-.outputContainer{
+.outputContainer {
     height: 320px;
     width: 320px;
     background-color: hsl(183, 100%, 15%);
@@ -146,27 +152,29 @@ input:focus{
 }
 
 
-.outputContainer p:not(:last-child){
+.outputContainer p:not(:last-child) {
     color: white;
     font-size: 14px;
 }
 
-.outputContainer p>span{
+.outputContainer p>span {
     font-size: 12px;
 }
 
-.tip-amount-dollor-span, .tip-amount-person-span{   
+.tip-amount-dollor-span,
+.tip-amount-person-span {
     color: hsl(172, 67%, 45%);
     font-size: 30px;
 }
 
-.tip-amount, .total{
+.tip-amount,
+.total {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 }
 
-.reset-btn button{
+.reset-btn button {
     position: absolute;
     bottom: 30px;
     width: 260px;
@@ -177,6 +185,95 @@ input:focus{
     cursor: pointer;
 }
 
-.reset-btn button:hover{
-    background-color: #9fe8df;
+.reset-btn button:hover {
+    background-color: #9fe8df !important;
+}
+
+
+.copyright_footer {
+    color: hsl(183, 100%, 15%);
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ****************************************************************** */
+
+/* Media Query */
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+    }
+    
+    .mobile-center{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container {
+        display: block;
+        height: auto;
+    }
+
+    .userInputContainer {
+        border-radius: 20px 20px 0 0;
+        height: auto;
+        width: 375px;
+        padding: 0 27.5px;
+    }
+
+    .tipContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    input {
+        height: 50px;
+        border-radius: 5px;
+        font-size: 24px;
+    }
+
+    .card1-div2 input[value] {
+        font-size: 20px;
+    }
+    .userInputContainer p {
+        margin: 30px 0 10px 0;
+    }
+
+    .card1-div1>img {
+        top: 77px;
+    }
+
+    .card1-div3 img {
+        top: 429px;
+    }
+
+    .card1-title3 {
+        display: inline-block;
+    }
+
+    .outter-outputContainer {
+        height: auto;
+        width: 375px;
+        border-radius: 0 0 20px 20px;
+        padding: 30px 0;
+    }
+
+    .outputContainer {
+        height: auto;
+        background-color: hsl(183, 100%, 15%);
+        padding: 30px 25px;
+    }
+
+    .copyright_footer {
+        height: 10vh;   
+        color: hsl(183, 100%, 15%);
+    }
+
+    .reset-btn button {
+        position: static;
+        height: 40px;
+    }
 }
