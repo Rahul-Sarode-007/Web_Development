@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    font-family: 'Space Mono', monospace;
+    color: #04d904;
+    position: relative;
+    /* height: 100vh; */
+
+}
+
+.access-granted{
+    height: 100px;
+    width: 300px;
+    background-color: green;
+    color: white;
+    font-size: 32px;
+
+    /* Centering the text under div access-granted */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Centerning the access-granted div itself to body */
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    visibility: hidden;
+}
