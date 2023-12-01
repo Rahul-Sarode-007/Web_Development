@@ -47,6 +47,31 @@ for (var i = 0; i < countries.length; i++) {
   document.getElementById("dropdown").appendChild(option);
 }
 
+const main = async (county) => {
+  
+
+    let weatherRawData = (
+      await fetch(`https://goweather.herokuapp.com/weather/${county}`)
+    ).json();
+    let weatherData = await weatherRawData;
+   
+   
+    document.querySelector(
+      ".temperature"
+    ).innerHTML = `The temprature of ${county} is ${weatherData.temperature}`;
+  
+   
+    document.querySelector(
+      ".wind"
+    ).innerHTML = `The wind of ${county} is ${weatherData.wind}`;
+  
+  
+    document.querySelector(
+      ".description"
+    ).innerHTML = `The weather description of ${county} is ${weatherData.description}`;
+  }
+
+
 const handleOption = () =>{
 var dropdown = document.getElementById("dropdown");
   dropdown.addEventListener("change", function (event) {
@@ -54,28 +79,5 @@ var dropdown = document.getElementById("dropdown");
   })
 }
 
-const main = async (county) => {
-  
-
-  let weatherRawData = (
-    await fetch(`https://goweather.herokuapp.com/weather/${county}`)
-  ).json();
-  let weatherData = await weatherRawData;
- 
- 
-  document.querySelector(
-    ".temperature"
-  ).innerHTML = `The temprature of ${county} is ${weatherData.temperature}`;
-
- 
-  document.querySelector(
-    ".wind"
-  ).innerHTML = `The wind of ${county} is ${weatherData.wind}`;
-
-
-  document.querySelector(
-    ".description"
-  ).innerHTML = `The weather description of ${county} is ${weatherData.description}`;
-}
 
 handleOption();
