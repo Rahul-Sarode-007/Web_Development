@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>currency converter app</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Exchange App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Real Time Currency Exchange Rates</h1>
+    </header>
+    <div class="converter-container">
+      <div class="container">
+        <!-- <p class="current-Date" style="visibility:hidden;">Date</p> -->
+        <h2 class="converted-value-element">
+          Select countries
+        </h2>
+        <div class="selectElement">
+            <select id="dropdown-1">
+                <option value="" disabled selected>Select Country 1</option>
+              </select>
+      
+              <select id="dropdown-2">
+                <option value="" disabled selected>Select Country 2</option>
+              </select>
+        </div>
+        
+      </div>
+    
+
+    <div class="app-description">
+      <h3>About the App</h3>
+      <p>
+        Welcome to the Real Time Currency Exchange Rates App, your go-to tool for
+        accurate and up-to-date currency exchange rates. Whether you're a
+        frequent traveler, an international businessperson, or simply curious
+        about global currencies.
+        <span
+          >This app provides instant conversion with live data fetched from
+          reliable sources.</span
+        >
+      </p>
+
+      <h3>Key Features</h3>
+      <ul>
+        <li>
+          <strong>Live Exchange Rates:</strong> Get real-time currency exchange
+          rates to stay informed about the latest market trends.
+        </li>
+        <li>
+          <strong>User-Friendly Interface:</strong> A simple and intuitive
+          design for quick and hassle-free currency conversions.
+        </li>
+        <!-- Add more key features as needed -->
+      </ul>
+
+      <p>
+        Make your financial transactions, travel plans, and business dealings
+        smoother with the Real Time Currency Exchange Rates App.
+      </p>
+    </div>
+</div>
+    <!-- todo: add flags -->
+    <!-- <img src="https://flagsapi.com/BE/flat/64.png"> -->
+
+    <p class="copyright">Created By Rahul Sarode</p>
+
     <script src="script.js"></script>
-    <img src="https://flagsapi.com/BE/flat/64.png">
-</body>
+  </body>
 </html>
