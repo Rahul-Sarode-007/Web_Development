@@ -16,6 +16,8 @@ todo: "use following API more features"
 let dropDown_1 =   document.querySelector("#dropdown-1")
 let dropDown_2 =   document.querySelector("#dropdown-2")
 let currentDate =  document.querySelector(".current-Date")
+let switchBtn = document.querySelector(".swap")
+let option1,option2
 
 let convertedValueElement = document.querySelector(".converted-value-element")
 
@@ -241,7 +243,25 @@ if(value1 && value2){
 }
 }
 
+swapCountry = ()=>{
+  let value1 = dropDown_2.value
+  let value2 = dropDown_1.value
+
+
+  // console.log(dropDown_2.value)
+  // console.log(dropDown_1.value)
+
+
+   // Swaping the values in the dropdowns UI
+   dropDown_1.value = value1;
+   dropDown_2.value = value2;
+ 
+  
+  if(value1 && value2){
+    findKey(value1,value2)
+  }
+}
+
 dropDown_1.addEventListener("input",handleUserInput)
 dropDown_2.addEventListener("input",handleUserInput)
-
-
+switchBtn.addEventListener("click",swapCountry)
