@@ -3,6 +3,9 @@ const userInput = document.querySelector("#autocomplete-input")
 const ulList = document.querySelector(".autocomplete-list")
 
 
+// *********************
+
+
 const getCountryData = async () =>{
     let countryResp = await fetch("https://restcountries.com/v3.1/all")
     let data = await countryResp.json()
@@ -12,7 +15,7 @@ const getCountryData = async () =>{
         return country.name.common
     })    
 
-    console.log(countryNames)
+    // console.log(countryNames)
     
 }
 
@@ -22,7 +25,7 @@ getCountryData()
 
 const onInputChange = () =>{
     value = userInput.value.toLowerCase()
-    console.log(value)
+    // console.log(value)
     
     filteredNames = []
 
@@ -38,12 +41,14 @@ const onInputChange = () =>{
         }
     });
 
-    console.log(filteredNames)
+    // console.log(filteredNames)
     createAutoCompleteDropdown(filteredNames)
 
 }
 
 userInput.addEventListener("input",onInputChange)
+
+
 
 // *********************
 
@@ -54,6 +59,9 @@ const createAutoCompleteDropdown = (liItems) =>{
     liItems.forEach(liItem => {  
         ulList.insertAdjacentHTML("afterbegin", `<li><button>${liItem}</button></li>`)
     });
+
+    let dropdownBtn = document.querySelectorAll(".autocomplete-list button")
+    userClick(dropdownBtn)
 }
 
 // *********************
@@ -65,4 +73,27 @@ const removeAutoCompleteDropdown = () =>{
     });
 }
 
+
+// *********************
+
+const onCountryButtonClick = (e) =>{ 
+        e.preventDefault()
+        btnHTML = e.target.innerHTML
+        console.log(btnHTML)
+
+        userInput.value = btnHTML
+        removeAutoCompleteDropdown()
+
+}
+
+// *********************
+
+
+const userClick = (dropdownBtn) =>{
+    let i = 0
+    dropdownBtn.forEach(() => {
+        dropdownBtn[i].addEventListener("click", onCountryButtonClick)
+        i++
+    });
+}
 

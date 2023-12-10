@@ -12,6 +12,10 @@ input{
     padding: 0.5em;
 }
 
+input:focus{
+    outline: 1px solid #268ef0;
+}
+
 
 button{
     cursor: pointer;
