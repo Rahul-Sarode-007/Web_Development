@@ -8,14 +8,51 @@ body{
 
 input{
     border: unset;
-    background-color: rgb(235, 234, 234);
+    background-color: #e9e9e9;
     padding: 0.5em;
 }
 
-button {
+
+button{
+    cursor: pointer;
+}
+
+.btn-submit{
     border: unset;
     background-color: #268ef0;
     padding: 0.5em;
-    color: white;
-    cursor: pointer;
+    color: #ffffff;
 }
+
+.autocomplete-wrapper{
+    display: inline-block;
+    position: relative;
+}
+
+.autocomplete-list{
+    list-style: none;
+    padding: unset;
+    margin: unset;
+    position: absolute;
+    width: 100%;
+}
+
+.autocomplete-list li:hover{
+    background-color: #f7f7f7;
+}
+
+.autocomplete-list li{
+    border: 1px solid #e9e9e9;
+    border-top: unset;
+
+}
+
+.autocomplete-list button{
+    border: none;
+    background-color: unset;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5em;
+}
+

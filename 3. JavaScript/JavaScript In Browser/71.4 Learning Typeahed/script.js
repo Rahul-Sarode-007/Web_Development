@@ -1,12 +1,68 @@
-// https://restcountries.com/v3.1/all
-//object.name.common
+let countryNames = []
+const userInput = document.querySelector("#autocomplete-input")
+const ulList = document.querySelector(".autocomplete-list")
+
 
 const getCountryData = async () =>{
-    const countryRes = await fetch("https://restcountries.com/v3.1/all")
-    console.log(await countryRes.json())
+    let countryResp = await fetch("https://restcountries.com/v3.1/all")
+    let data = await countryResp.json()
+
+    //Populating countryNames array from API
+    countryNames = data.map((country)=>{
+        return country.name.common
+    })    
+
+    console.log(countryNames)
+    
 }
 
 getCountryData()
 
+// *********************
+
+const onInputChange = () =>{
+    value = userInput.value.toLowerCase()
+    console.log(value)
+    
+    filteredNames = []
+
+    if (value===""){
+        removeAutoCompleteDropdown()
+        return
+    }
+
+    //Populating the filteredNames array, array contain user matched countries
+    countryNames.forEach(countryName => {
+        if (countryName.substr(0, value.length).toLowerCase() === value) {
+            filteredNames.push(countryName)
+        }
+    });
+
+    console.log(filteredNames)
+    createAutoCompleteDropdown(filteredNames)
+
+}
+
+userInput.addEventListener("input",onInputChange)
+
+// *********************
+
+const createAutoCompleteDropdown = (liItems) =>{
+
+    removeAutoCompleteDropdown()
+
+    liItems.forEach(liItem => {  
+        ulList.insertAdjacentHTML("afterbegin", `<li><button>${liItem}</button></li>`)
+    });
+}
+
+// *********************
+
+const removeAutoCompleteDropdown = () =>{
+    removeLiItems = document.querySelectorAll(".autocomplete-list li")
+    removeLiItems.forEach(removeLiItem => {
+        removeLiItem.remove()
+    });
+}
 
 

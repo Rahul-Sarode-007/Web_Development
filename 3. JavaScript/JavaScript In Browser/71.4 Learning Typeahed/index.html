@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autocomplete <Input></Input></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocomplete input</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Autocomplete input</h1>
-    <form action="">
-        <input type="text" placeholder="Country">
-        <button type="submit">Send</button>
-    </form>
+    <form action="" autocomplete="off">
+      <div class="autocomplete-wrapper">
+        <input id="autocomplete-input" type="text" placeholder="Country" />
+        <ul id="autocomplete-list" class="autocomplete-list">
+          
+        </ul>
 
+      </div>
+
+      <button type="submit" class="btn-submit">Sent</button>
+      
+      <TODO:>
+        <!-- <h1>Need to Fix this</h1> -->
+      </TODO:>
+    </form>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
