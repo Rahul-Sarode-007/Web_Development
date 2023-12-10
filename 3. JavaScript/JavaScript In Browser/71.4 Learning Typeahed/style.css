@@ -39,6 +39,9 @@ button{
     margin: unset;
     position: absolute;
     width: 100%;
+    background-color: #fff;
+    max-height: 300px; /* Set a maximum height for the wrapper */
+    overflow-y: auto; 
 }
 
 .autocomplete-list li:hover{
