@@ -5,9 +5,9 @@ const userInput = document.querySelector("#autocomplete-input");
 
 const ulList = document.querySelector(".autocomplete-list");
 
-const userInput2 = document.querySelector("#autocomplete-input-2");
+const userInput2 = document.querySelector("#autocomplete-input2");
 
-const ulList2 = document.querySelector(".autocomplete-list-2");
+const ulList2 = document.querySelector(".autocomplete-list2");
 
 // *********************
 
@@ -30,24 +30,25 @@ getCountryData();
 // *********************
 
 const onInputChange = (e) => {
-  value = userInput.value.toLowerCase();
-  value = userInput2.value.toLowerCase();
-
+  let value = "";
   let clickInput = e.target.id;
   console.log(e.target.id);
 
-  // if (e.target.id === "autocomplete-input"){
-  //   console.log("pass")
-  // }else{
-  //   console.log("failed")
-  // }
+  if (e.target.id === "autocomplete-input") {
+    value = userInput.value.toLowerCase();
+    console.log("pass");
+  }
+  if (e.target.id === "autocomplete-input2") {
+    value = userInput2.value.toLowerCase();
+    console.log("failed");
+  }
 
   //   console.log(value);
 
   filteredNames = [];
 
   if (value === "") {
-    removeAutoCompleteDropdown();
+    removeAutoCompleteDropdown(clickInput);
     return;
   }
 
@@ -71,7 +72,7 @@ const handleInputClick = (e) => {
   countryNames.forEach((countryName) => {
     filteredNames.push(countryName);
   });
-  createAutoCompleteDropdown(filteredNames,clickInput);
+  createAutoCompleteDropdown(filteredNames, clickInput);
 };
 
 // *********************
@@ -85,46 +86,62 @@ userInput2.addEventListener("click", handleInputClick);
 // *********************
 
 const createAutoCompleteDropdown = (liItems, clickInput) => {
-  removeAutoCompleteDropdown();
+  removeAutoCompleteDropdown(clickInput);
+
+  console.log(clickInput);
 
   if (clickInput === "autocomplete-input") {
-    console.log("pass")
     liItems.forEach((liItem) => {
-    ulList.insertAdjacentHTML(
-      "afterbegin",
-      `<li><button>${liItem}</button></li>`
-    );
-  });
-  } 
-  
-  if(clickInput === "autocomplete-input-2") {
-liItems.forEach((liItem) => {
-  console.log("failed")
-    ulList2.insertAdjacentHTML(
-      "afterbegin",
-      `<li><button>${liItem}</button></li>`
-    );
-  });
+      ulList.insertAdjacentHTML(
+        "afterbegin",
+        `<li><button>${liItem}</button></li>`
+      );
+    });
+    // let dropdownBtns = document.querySelectorAll(".autocomplete-list button");
+    // dropdownBtns.addEventListener("click", userClick)
+
+    let dropdownBtns = document.querySelectorAll(".autocomplete-list button");
+    dropdownBtns.forEach((btn) => {
+      btn.addEventListener("click", userClick);
+    });
   }
 
-  // liItems.forEach((liItem) => {
-  //   ulList.insertAdjacentHTML(
-  //     "afterbegin",
-  //     `<li><button>${liItem}</button></li>`
-  //   );
-  // });
+  if (clickInput === "autocomplete-input2") {
+    liItems.forEach((liItem) => {
+      ulList2.insertAdjacentHTML(
+        "afterbegin",
+        `<li><button>${liItem}</button></li>`
+      );
+    });
 
-  let dropdownBtns = document.querySelectorAll(".autocomplete-list button");
-  userClick(dropdownBtns);
+    // let dropdownBtns = document.querySelectorAll(".autocomplete-list2 button");
+    // dropdownBtns.addEventListener("click", userClick)
+    let dropdownBtns2 = document.querySelectorAll(".autocomplete-list2 button");
+    dropdownBtns2.forEach((btn) => {
+      btn.addEventListener("click", userClick);
+    });
+  }
+
+  // let dropdownBtns2 = document.querySelectorAll(".autocomplete-list2 button");
+  // dropdownBtns2.addEventListener("click",userClick)
 };
 
 // *********************
 
-const removeAutoCompleteDropdown = () => {
-  removeLiItems = document.querySelectorAll(".autocomplete-list li");
-  removeLiItems.forEach((removeLiItem) => {
-    removeLiItem.remove();
-  });
+const removeAutoCompleteDropdown = (clickInput) => {
+  if (clickInput === "autocomplete-input") {
+    removeLiItems = document.querySelectorAll(".autocomplete-list li");
+    removeLiItems.forEach((removeLiItem) => {
+      removeLiItem.remove();
+    });
+  }
+
+  if (clickInput === "autocomplete-input2") {
+    removeLiItems = document.querySelectorAll(".autocomplete-list2 li");
+    removeLiItems.forEach((removeLiItem) => {
+      removeLiItem.remove();
+    });
+  }
 };
 
 // *********************
@@ -140,10 +157,8 @@ const onCountryButtonClick = (e) => {
 
 // *********************
 
-const userClick = (dropdownBtns) => {
-  let i = 0;
-  dropdownBtns.forEach(() => {
-    dropdownBtns[i].addEventListener("click", onCountryButtonClick);
-    i++;
-  });
+const userClick = () => {
+  console.log("hi");
+
+  // btn.addEventListener("click", onCountryButtonClick);
 };
