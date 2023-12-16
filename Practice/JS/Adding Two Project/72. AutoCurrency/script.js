@@ -162,6 +162,7 @@ const convertedValueElement = document.querySelector(
   ".converted-value-element"
 );
 
+
 const retrieveValueFromObject = () => {
   // Extract all keys of the 'countries' object and create an array of keys.
   countryNames = Object.keys(countries).map((key) => countries[key]);
@@ -195,7 +196,7 @@ const onInputChange = (e) => {
 
   //Populating the filteredNames array, array contain user matched countries
   countryNames.forEach((countryName) => {
-    if (countryName.substr(0, value.length).toLowerCase() === value) {
+    if (countryName.toLowerCase().includes(value)) {
       filteredNames.push(countryName);
     }
   });
@@ -301,6 +302,34 @@ const onCountryButtonClick = (e, clickInput) => {
 
 // *********************
 
+swapCountry = () => {
+  // Basic swapping logic
+  // a=5,b=7,c=0
+  // c=a
+  // a=b
+  // b=c
+
+  // console.log(a,b)
+
+  let btnHTML3;
+
+  btnHTML3 = btnHTML;
+  btnHTML = btnHTML2;
+  btnHTML2 = btnHTML3;
+
+  userInput.value = btnHTML;
+  userInput2.value = btnHTML2;
+
+  if (btnHTML !== undefined && btnHTML2 !== undefined) {
+    findKey(btnHTML, btnHTML2);
+  }
+};
+
+let switchBtn = document.querySelector(".swap");
+switchBtn.addEventListener("click", swapCountry);
+
+// *********************
+
 const callAPI = async (countryCode1, countryCode2) => {
   let exchangeRatesURL = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${countryCode1}/${countryCode2}.json`;
 
@@ -316,16 +345,16 @@ const callAPI = async (countryCode1, countryCode2) => {
     //      "inr": 83.02737928
     //    }
 
-    
     let convertedValue = exchangeValue[countryCode2];
 
     convertedValueElement.innerHTML = convertedValue;
 
+    //Date Funcationality
     // let convertedDate =  exchangeValue.date
     // currentDate.innerHTML= convertedDate
     // document.querySelector(".current-Date").style.visibility = "visible"
-  
-  
+
+
   } catch (error) {
     console.log("Error occure while fetching API");
     console.log(error);
@@ -350,5 +379,9 @@ const findKey = (country1, country2) => {
   });
 
   callAPI(countryCode1, countryCode2);
-  
 };
+
+
+
+// *****************************************
+// TODO: keyboard listener and deappering list after clicking on body
