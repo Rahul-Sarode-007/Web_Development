@@ -194,12 +194,19 @@ const onInputChange = (e) => {
     return;
   }
 
-  //Populating the filteredNames array, array contain user matched countries
+
   countryNames.forEach((countryName) => {
-    if (countryName.toLowerCase().includes(value)) {
+    if (countryName.substr(0, value.length).toLowerCase() === value) {
       filteredNames.push(countryName);
     }
   });
+
+  //Populating the filteredNames array, array contain user matched countries
+  // countryNames.forEach((countryName) => {
+  //   if (countryName.toLowerCase().includes(value)) {
+  //     filteredNames.push(countryName);
+  //   }
+  // });
 
   // console.log(filteredNames)
   createAutoCompleteDropdown(filteredNames, clickInput);
@@ -349,12 +356,9 @@ const callAPI = async (countryCode1, countryCode2) => {
 
     convertedValueElement.innerHTML = convertedValue;
 
-    //Date Funcationality
     // let convertedDate =  exchangeValue.date
     // currentDate.innerHTML= convertedDate
     // document.querySelector(".current-Date").style.visibility = "visible"
-
-
   } catch (error) {
     console.log("Error occure while fetching API");
     console.log(error);
