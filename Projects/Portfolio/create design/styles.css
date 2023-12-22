@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80vw;
+    background-color: aqua;
+    position: relative;
+    padding-top: 105px;
+
+}
+
+.container>* {
+    margin: auto;
+
+}
+
+.circle,
+.circle-1,
+.circle-2 {
+    width: 72px;
+    height: 72px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.brach-line,
+.brach-line-2 {
+    background-color: rgb(247, 247, 124);
+    width: 8px;
+    height: 210px;
+}
+
+.box {
+    background-color: white;
+    width: 315px;
+    height: 210px;
+    position: absolute;
+    top: 36px;
+    left: 10%;
+}
