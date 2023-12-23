@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.experience-section{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.card-1, .card-2, .card-3 {
+    position: relative;
+}
+
+.card-1-front, .card-2-front, .card-3-front {
+    width: 300px;
+    height: 400px;
+    background-color: rgb(38, 38, 46);
+    text-align: center;
+}
+
+.card-1-front img, .card-2-front img, .card-3-front img {
+    width: 300px;
+    height: 150px;
+}
+
+.position-title p {
+    color: white;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.position-title p:first-child {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.position-title p:last-child {
+    margin-bottom: 20px;
+}
+/* *********** */
+
+.card-1-back,.card-2-back,.card-3-back {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(62, 62, 75);
+    transform: translateY(0);
+    transition: all 2s;
+}
+
+.card-1-back-js {
+    transform: translateY(-100%);
+}
+
+.card-1-back p, .card-2-back p, .card-3-back p {
+    color: white;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.card-1-back p:first-child, .card-2-back p:first-child, .card-3-back p:first-child {
+    padding-top: 10px;
+}
+
+.test{
+    position: relative;
+    background-color: wheat;
+    width: 100vw;
+    height: 400px;
+}
+

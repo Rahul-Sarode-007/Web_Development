@@ -8,7 +8,7 @@
     height: 100vh;
     background: linear-gradient(to bottom, #41B3A3, #1C344C);
     color: #fff;
-    border-bottom: 2px solid #FFD700;
+    /* border-bottom: 2px solid #FFD700; */
     padding: 3rem 10%;
 }
   
@@ -79,108 +79,143 @@
 }
 
 
-
-  
+/*******************************/
+/* Section 2: */
 
 .about-me {
-    background: linear-gradient(to bottom, #41B3A3, #1C344C);
-    padding: 3rem 10%;
-    color: #fff;
-    border-bottom: 2px solid #FFD700;
-  }
-  
-  .about-me h2 {
-    color: #FFD700;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-  }
-  
-  .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .profile-container {
-    flex-basis: 40%;
-    overflow: hidden;
-    border-radius: 10px;
-  }
-  
-  .profile-pic {
-    width: 90%;
-    border-radius: 10px; 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; 
-  }
-  
-  .profile-pic:hover {
-    transform: scale(1.1); 
-  }
-  
-  .text-content {
-    flex-basis: 55%;
-  }
-  
-  .about-me p {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5; 
-  }
+  background: #20232a; /* Dark background color */
+  padding: 3rem 10%;
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.profile-container {
+  flex-basis: 40%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover .profile-pic {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.text-content {
+  flex-basis: 60%;
+  text-align: left;
+}
+
+.about-me h2 {
+  position: relative;
+  left: 43.3%;
+  width: 300px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #FFD700; /* Accent color */
+}
+
+.text-content p {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
 
   /* **************** */
-
-  .experience {
-    height: auto;
-    background: linear-gradient(to bottom, #41B3A3, #1C344C);
-    border-bottom: 2px solid #FFD700;
+#experience{
+    background: #393E46; /* Dark background color */
     padding: 3rem 10%;
     color: #fff;
-  }
-  
-  .experience h2 {
-    color: #FFD700;
+}
+
+.experience-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+#experience h2 {
+    position: relative;
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 2rem;
-  }
-  
-  .experience-positions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-  
-  .position-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    flex-basis: calc(33.33% - 2rem);
-  }
-  
-  .position {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-  
-  .position-title p {
-    font-weight: bold;
-    color: #1C344C; 
-  }
-  
-  .position-description p {
-    color: #555;
-    font-size: 1.6rem; 
-  }
-  
-  .position-card:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-  }
-  
+    margin-bottom: 3rem;
+    color: #FFD700;
+}
+
+.card-1, .card-2, .card-3 {
+    position: relative;
+}
+
+.card-1-front, .card-2-front, .card-3-front {
+    width: 300px;
+    height: 400px;
+    background-color: rgb(38, 38, 46);
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+.card-1-front img, .card-2-front img, .card-3-front img {
+    width: 300px;
+    height: 150px;
+}
+
+.position-title p {
+    color: white;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.position-title p:first-child {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.position-title p:last-child {
+    margin-bottom: 20px;
+}
+/* *********** */
+
+.card-1-back,.card-2-back,.card-3-back {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(62, 62, 75);
+    transform: translateY(0);
+    transition: all 2s;
+}
+
+.card-1-back-js {
+    transform: translateY(-100%);
+}
+
+.card-1-back p, .card-2-back p, .card-3-back p {
+    color: white;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.card-1-back p:first-child, .card-2-back p:first-child, .card-3-back p:first-child {
+    padding-top: 10px;
+}
+
+.test{
+    position: relative;
+    background-color: #393E46;
+    width: 80vw;
+    height: 400px;
+}
+
