@@ -40,3 +40,24 @@ cardfront3.addEventListener("mouseout", () => {
     cardBack3.classList.remove("card-1-back-js");
 });
 
+// *******************************
+// Experience section
+
+// experienceSection = document.querySelector("#project").offsetHeight;
+
+// projectSection = document.querySelector(".black").style.marginTop = experienceSection/2 +"px";
+
+
+// *******************************
+// Get the video element
+var myVideo = document.querySelector(".project-1-video");
+
+// Function to start the video
+function startVideo() {
+  myVideo.play();
+}
+
+// Function to pause the video
+function pauseVideo() {
+  myVideo.pause();
+}

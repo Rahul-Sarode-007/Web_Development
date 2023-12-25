@@ -134,6 +134,8 @@
 }
 
   /* **************** */
+
+  
 #experience{
     background: #393E46; /* Dark background color */
     padding: 3rem 10%;
@@ -168,7 +170,7 @@
 
 .card-1-front img, .card-2-front img, .card-3-front img {
     width: 300px;
-    height: 150px;
+    height: 180px;
 }
 
 .position-title p {
@@ -193,6 +195,7 @@
     width: 300px;
     height: 400px;
     background-color: rgb(62, 62, 75);
+    padding: 20px;
     transform: translateY(0);
     transition: all 2s;
 }
@@ -203,7 +206,7 @@
 
 .card-1-back p, .card-2-back p, .card-3-back p {
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
@@ -218,4 +221,60 @@
     width: 80vw;
     height: 400px;
 }
+
+
+/* ********************** */
+/* 
+#project{   
+    position: absolute;
+    transform: translateY(-47%);
+}
+
+.black{
+    color: blue;
+    background-color: #41B3A3;
+} */
+
+#project{
+    background-color: #3b455a;
+    padding: 3rem 10%;
+    color: white;
+
+}
+
+.projects h2{
+    text-align: center;
+    font-size: 3rem;
+    color: #FFD700;
+}
+
+.projects p{
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    line-height: 1.2;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.project-container img{
+    height: 200px;
+    width: 100%;
+
+}
+.projects video {
+    height: 200px;
+    transform: scale(120%);
+}
+
+/* .project-1-video{
+    display: none;
+}
+
+.project-container img:hover + .project-1-video{
+    display: block;
+} */
 
