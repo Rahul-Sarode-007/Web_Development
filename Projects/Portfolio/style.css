@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,11 +8,10 @@
     height: 100vh;
     background: linear-gradient(to bottom, #41B3A3, #1C344C);
     color: #fff;
-    /* border-bottom: 2px solid #FFD700; */
     padding: 3rem 10%;
 }
-  
-.nav-bar{
+
+.nav-bar {
     display: flex;
     justify-content: center;
 }
@@ -21,7 +20,7 @@
     display: flex;
     gap: 2rem;
 }
-  
+
 .nav-links li {
     list-style: none;
 }
@@ -32,25 +31,25 @@
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
-  
+
 .nav-links a:hover {
     color: #FFD700;
 }
-  
+
 .header {
     text-align: center;
 }
-  
+
 .title h1 {
     font-size: 5rem;
     font-family: 'Poppins', sans-serif;
     margin-top: 2rem;
 }
-  
+
 .title h1 span {
     color: #FFD700;
 }
-  
+
 .subtitle h2 {
     font-size: 2rem;
     font-family: 'Poppins', sans-serif;
@@ -60,7 +59,7 @@
 .cta-button {
     margin-top: 5rem;
 }
-  
+
 .btn {
     display: inline-block;
     padding: 1.5rem 3rem;
@@ -72,7 +71,7 @@
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-  
+
 .btn:hover {
     background-color: #1C344C;
     color: #fff;
@@ -83,66 +82,71 @@
 /* Section 2: */
 
 .about-me {
-  background: #20232a; /* Dark background color */
-  padding: 3rem 10%;
-  color: #fff;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-}
-
-.profile-container {
-  flex-basis: 40%;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.profile-pic {
-  width: 100%;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-container:hover .profile-pic {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.text-content {
-  flex-basis: 60%;
-  text-align: left;
-}
-
-.about-me h2 {
-  position: relative;
-  left: 43.3%;
-  width: 300px;
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #FFD700; /* Accent color */
-}
-
-.text-content p {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-  /* **************** */
-
-  
-#experience{
-    background: #393E46; /* Dark background color */
+    background: #20232a;
+    /* Dark background color */
     padding: 3rem 10%;
     color: #fff;
 }
 
-.experience-section{
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.profile-container {
+    flex-basis: 40%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover .profile-pic {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.text-content {
+    flex-basis: 60%;
+    text-align: left;
+}
+
+.about-me h2 {
+    position: relative;
+    left: 43.3%;
+    width: 300px;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #FFD700;
+    /* Accent color */
+}
+
+.text-content p {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* **************** */
+
+
+#experience {
+    background: #393E46;
+    /* Dark background color */
+    padding: 3rem 10%;
+    color: #fff;
+    height: 600px;
+    overflow: hidden;
+}
+
+.experience-section {
     display: flex;
     justify-content: space-between;
 }
@@ -155,11 +159,15 @@
     color: #FFD700;
 }
 
-.card-1, .card-2, .card-3 {
+.card-1,
+.card-2,
+.card-3 {
     position: relative;
 }
 
-.card-1-front, .card-2-front, .card-3-front {
+.card-1-front,
+.card-2-front,
+.card-3-front {
     width: 300px;
     height: 400px;
     background-color: rgb(38, 38, 46);
@@ -168,7 +176,9 @@
 
 }
 
-.card-1-front img, .card-2-front img, .card-3-front img {
+.card-1-front img,
+.card-2-front img,
+.card-3-front img {
     width: 300px;
     height: 180px;
 }
@@ -188,9 +198,12 @@
 .position-title p:last-child {
     margin-bottom: 20px;
 }
+
 /* *********** */
 
-.card-1-back,.card-2-back,.card-3-back {
+.card-1-back,
+.card-2-back,
+.card-3-back {
     position: absolute;
     width: 300px;
     height: 400px;
@@ -204,18 +217,22 @@
     transform: translateY(-100%);
 }
 
-.card-1-back p, .card-2-back p, .card-3-back p {
+.card-1-back p,
+.card-2-back p,
+.card-3-back p {
     color: white;
     font-size: 22px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
-.card-1-back p:first-child, .card-2-back p:first-child, .card-3-back p:first-child {
+.card-1-back p:first-child,
+.card-2-back p:first-child,
+.card-3-back p:first-child {
     padding-top: 10px;
 }
 
-.test{
+.test {
     position: relative;
     background-color: #393E46;
     width: 80vw;
@@ -235,46 +252,94 @@
     background-color: #41B3A3;
 } */
 
-#project{
+#project {
     background-color: #3b455a;
     padding: 3rem 10%;
     color: white;
 
 }
 
-.projects h2{
+.projects h2 {
     text-align: center;
     font-size: 3rem;
     color: #FFD700;
 }
 
-.projects p{
+.projects p {
     font-size: 1.5rem;
     margin: 1.5rem 0;
     line-height: 1.2;
 }
 
-.project-container{
+.project-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
 }
 
-.project-container img{
+.project-container img {
     height: 200px;
     width: 100%;
 
 }
-.projects video {
+
+/* .projects video {
     height: 200px;
     transform: scale(120%);
-}
-
-/* .project-1-video{
-    display: none;
-}
-
-.project-container img:hover + .project-1-video{
-    display: block;
 } */
 
+
+/* *************************************** */
+#footer {
+    background-color: #1a202c;
+    padding: 3rem 10%;
+    color: white;
+
+}
+
+#footer h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #FFD700;
+    margin-bottom: 2rem;
+
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+
+}
+
+.social-links i {
+    color: #FFD700;
+    font-size: 3rem;
+
+}
+
+.footer-links {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+.footer-links>a {
+    text-decoration: none;
+    color: #FFD700;
+
+}
+
+.footer-links>a>li {
+    list-style-type: none;
+    font-size: 1.6rem;
+}
+
+.copyright {
+    text-align: center;
+    color: #FFD700;
+    font-size: 1.6rem;
+}

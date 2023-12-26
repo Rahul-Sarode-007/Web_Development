@@ -4,7 +4,7 @@ let cardBack1 = document.querySelector(".card-1-back");
 
 
 cardfront1.addEventListener("mouseover", () => {
-    cardBack1.classList.toggle("card-1-back-js");
+    cardBack1.classList.add("card-1-back-js");
 });
 
 
@@ -19,7 +19,7 @@ let cardfront2 = document.querySelector(".card-2-front");
 
 
 cardfront2.addEventListener("mouseover", () => {
-    cardBack2.classList.toggle("card-1-back-js");
+    cardBack2.classList.add("card-1-back-js");
 });
 
 
@@ -32,7 +32,7 @@ let cardBack3 = document.querySelector(".card-3-back");
 let cardfront3 = document.querySelector(".card-3-front");
 
 cardfront3.addEventListener("mouseover", () => {
-    cardBack3.classList.toggle("card-1-back-js");
+    cardBack3.classList.add("card-1-back-js");
 });
 
 
@@ -50,14 +50,14 @@ cardfront3.addEventListener("mouseout", () => {
 
 // *******************************
 // Get the video element
-var myVideo = document.querySelector(".project-1-video");
+// var myVideo = document.querySelector(".project-1-video");
 
-// Function to start the video
-function startVideo() {
-  myVideo.play();
-}
+// // Function to start the video
+// function startVideo() {
+//   myVideo.play();
+// }
 
-// Function to pause the video
-function pauseVideo() {
-  myVideo.pause();
-}
+// // Function to pause the video
+// function pauseVideo() {
+//   myVideo.pause();
+// }
