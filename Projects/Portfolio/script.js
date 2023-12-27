@@ -1,3 +1,16 @@
+// <!-- Add this script tag after your existing HTML -->
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const navIcon = document.querySelector('.nav-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    navIcon.addEventListener('click', function () {
+      navLinks.classList.toggle('show');
+    });
+  });
+
+
+// *********************************************************
 let btn = document.querySelector(".card-1-btn");
 let cardfront1 = document.querySelector(".card-1-front");
 let cardBack1 = document.querySelector(".card-1-back");
