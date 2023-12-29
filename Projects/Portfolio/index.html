@@ -23,20 +23,24 @@
 
   <body>
     <section id="hero">
-      <div class="hero-section">
-        <!-- <div class="mobile-nav">
-        </div> -->
-        <div class="nav-bar">
-          <div class="nav-links">
-            <a href="#hero"><li class="Home">Home</li></a>
-            <a href="#about"><li class="About Me">About Me</li></a>
-            <a href="#experience"><li class="Experience">Experience</li></a>
-            <a href="#project"><li class="Projects">Projects</li></a>
-            <a href="#footer"><li class="Contact Me">Contact Me</li></a>
-          </div>
+      <div class="nav-bar">
+        <div class="nav-links">
+          <a href="#hero"><li class="Home">Home</li></a>
+          <a href="#about"><li class="About Me">About Me</li></a>
+          <a href="#experience"><li class="Experience">Experience</li></a>
+          <a href="#project"><li class="Projects">Projects</li></a>
+          <a href="#footer"><li class="Contact Me">Contact Me</li></a>
         </div>
+        <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
 
 
+      
+      <div class="hero-section">
         <div class="header">
           <div class="header-hero-text">
             <div class="title">
@@ -58,10 +62,21 @@
               <p>Click to scroll</p>
             </a>
           </div>
-
         </div>
       </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ************************************************** -->
 
@@ -106,10 +121,7 @@
         <div class="card-1">
           <div class="card-1-front">
             <div class="company-img">
-              <img
-                src="./Images/Inmarsat logo/Starlink (1).jpg"
-                alt=""
-              />
+              <img src="./Images/Inmarsat logo/Starlink (1).jpg" alt="" />
             </div>
 
             <div class="position-title">
@@ -233,14 +245,16 @@
         </div>
         <div class="project-container">
           <div class="project-1">
-            <a href="https://rahul-sarode-007.github.io/Currency-Exchange-Rate-App/">
+            <a
+              href="https://rahul-sarode-007.github.io/Currency-Exchange-Rate-App/"
+            >
               <img
-              src="./Images/Projects images/real.PNG"
-              srcset=""
-              onmouseover="startVideo()"
-              onmouseout="pauseVideo()"
+                src="./Images/Projects images/real.PNG"
+                srcset=""
+                onmouseover="startVideo()"
+                onmouseout="pauseVideo()"
             /></a>
-           
+
             <p><b>Currency Exchange Rate App: </b></p>
             <p>
               Developed a Real-Time Currency Exchange RateApp, showcasing

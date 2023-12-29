@@ -1,3 +1,54 @@
+window.addEventListener('scroll', function () {
+  const navBar = document.querySelector('.nav-bar');
+
+  if (window.scrollY > 5) {
+      navBar.style.padding = '1rem';
+      navBar.classList.add('transparent-bg');
+    } else {
+      navBar.style.padding = '2rem';
+      navBar.classList.remove('transparent-bg');
+  }
+});
+
+
+
+
+function toggleMobileMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+
+  navLinks.classList.toggle('active');
+  mobileMenuIcon.classList.toggle('open');
+}
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+      const navLinks = document.querySelector('.nav-links');
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+
+      navLinks.classList.remove('active');
+      mobileMenuIcon.classList.remove('open');
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************
 // <!-- Add this script tag after your existing HTML -->
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -74,3 +125,8 @@ cardfront3.addEventListener("mouseout", () => {
 // function pauseVideo() {
 //   myVideo.pause();
 // }
+
+
+
+
+
