@@ -2,11 +2,11 @@
 window.addEventListener("scroll", function () {
   const navBar = document.querySelector(".nav-bar");
   if (window.screen.width > 768) {
-    if (window.scrollY > 1) {
-      navBar.style.height = "4rem"
+    if (window.scrollY > 5) {
+      navBar.style.padding = "1rem";
       navBar.classList.add("transparent-bg");
     } else {
-      navBar.style.height = "6rem";
+      navBar.style.padding = "2rem";
       navBar.classList.remove("transparent-bg");
     }
   }
