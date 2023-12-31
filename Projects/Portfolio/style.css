@@ -139,6 +139,11 @@ html {
 
 @media screen and (max-width: 768px) {
 
+    .mobile-nav-bar-container{
+        background-color: #192b28;
+        padding: 1rem 2rem;
+    }
+
     .bar {
         width: 25px;
         height: 3px;
@@ -164,12 +169,16 @@ html {
         transform: rotate(45deg) translate(-6px, -8px);
     }
 
+
+
     .nav-bar{
         background-color: #21423e;
         display:block;
         position: static;
         padding: 1rem 2rem;
     }
+
+
 
     .nav-links {
         padding: 1rem 0rem;
