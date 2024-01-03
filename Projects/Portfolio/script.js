@@ -37,6 +37,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 });
 
 
+
 // *************************************
 
 //Tying Subtitle Effect
@@ -49,6 +50,7 @@ const subtitles = [
 ];
 
 let currentSubtitleIndex = 0
+let allowTypingAnimation = true;
 
 const subtitleElement = document.querySelector(".subtitle h2")
 let cursor =  document.querySelector(".cursor")
@@ -72,7 +74,7 @@ const typeSubtitle = (subtitle) =>{
 
 
 const eraseSubtitle = (subtitle)=>{
-  let currentIndex = subtitle.length
+  let currentIndex = subtitleElement.textContent.length
   // console.log(currentIndex)
 
   const erasingSubtitle = setInterval(()=>{
@@ -99,51 +101,66 @@ const eraseSubtitle = (subtitle)=>{
 
 const updateSubtite = (currentSubtitleIndex) =>{
   typeSubtitle(subtitles[currentSubtitleIndex])
+  if (allowTypingAnimation) {
+  }
 }
-
 updateSubtite(currentSubtitleIndex)
 
 
+// Check scroll position and disable typing animation if scrolled past 1000px
+window.addEventListener("scroll", () => {
+  if (window.scrollY < 10) {
+    console.log(window.scrollY)
+    allowTypingAnimation = true;
+
+  }
+  if(window.scrollY < 10){
+    allowTypingAnimation = false
+
+  }
+});
+
+
 // *********************************************************
-let btn = document.querySelector(".card-1-btn");
-let cardfront1 = document.querySelector(".card-1-front");
-let cardBack1 = document.querySelector(".card-1-back");
+
+// let cardfront1 = document.querySelector(".card-1-front");
+// let cardBack1 = document.querySelector(".card-1-back");
 
 
-cardfront1.addEventListener("mouseover", () => {
-    cardBack1.classList.add("card-1-back-js");
-});
+// cardfront1.addEventListener("mouseenter", () => {
+//     cardBack1.classList.add("card-1-back-js");
+// });
 
 
-cardfront1.addEventListener("mouseout", () => {
-    cardBack1.classList.remove("card-1-back-js");
-});
+// cardfront1.addEventListener("mouseleave", () => {
+//     cardBack1.classList.remove("card-1-back-js");
+// });
 
 // *************
-let btn2 = document.querySelector(".card-2-btn");
+
 let cardBack2 = document.querySelector(".card-2-back");
 let cardfront2 = document.querySelector(".card-2-front");
 
 
-cardfront2.addEventListener("mouseover", () => {
+cardfront2.addEventListener("mouseenter", () => {
     cardBack2.classList.add("card-1-back-js");
 });
 
 
-cardfront2.addEventListener("mouseout", () => {
+cardfront2.addEventListener("mouseleave", () => {
     cardBack2.classList.remove("card-1-back-js");
 });
 // *************
-let btn3 = document.querySelector(".card-3-btn");
+
 let cardBack3 = document.querySelector(".card-3-back");
 let cardfront3 = document.querySelector(".card-3-front");
 
-cardfront3.addEventListener("mouseover", () => {
+cardfront3.addEventListener("mouseenter", () => {
     cardBack3.classList.add("card-1-back-js");
 });
 
 
-cardfront3.addEventListener("mouseout", () => {
+cardfront3.addEventListener("mouseleave", () => {
     cardBack3.classList.remove("card-1-back-js");
 });
 
