@@ -1,17 +1,22 @@
 //Desktop scroll effect
-window.addEventListener("scroll", function () {
-  const navBar = document.querySelector(".nav-bar");
+const navBar = document.querySelector(".nav-bar");
+
+const navAnimation = () =>{
   if (window.screen.width > 768) {
     if (window.scrollY > 1) {
       navBar.style.height = "4rem";
-      navBar.classList.add("transparent-bg");
+      navBar.classList.add("sticky-bg");
     } else {
       navBar.style.height = "6rem";
-      navBar.classList.remove("transparent-bg");
+      navBar.classList.remove("sticky-bg");
+
     }
   }
-});
+}
+window.addEventListener("scroll", navAnimation);
 
+
+// *********************************************
 //Mobile menu-bar icon animation (X)
 function toggleMobileMenu() {
   const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
@@ -20,10 +25,10 @@ function toggleMobileMenu() {
 
 // Open mobile menu when icon is clicked
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
-const heroSection = document.querySelector(".hero-section");
+// const navBar = document.querySelector(".nav-bar")
 
 mobileMenuIcon.addEventListener("click", () => {
-  heroSection.classList.toggle("down-hero-section");
+  navBar.classList.toggle("down-nav-bar");
 });
 
 // Close mobile menu when a link is clicked
@@ -32,7 +37,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
     mobileMenuIcon.classList.remove("open");
 
-    heroSection.classList.remove("down-hero-section");
+    navBar.classList.remove("down-nav-bar");
   });
 });
 
@@ -69,7 +74,7 @@ const typeSubtitle = (subtitle) =>{
           },1000)
       }
       
-  },120)
+  },100)
 }
 
 
@@ -95,7 +100,7 @@ const eraseSubtitle = (subtitle)=>{
 
           updateSubtite(currentSubtitleIndex)
       }
-  },70)
+  },50)
 
 }
 
