@@ -119,11 +119,41 @@ window.addEventListener("scroll", () => {
     allowTypingAnimation = true;
 
   }
-  if(window.scrollY < 10){
+  if(window.scrollY > 10){
+    // console.log(window.screen.height)
+
     allowTypingAnimation = false
 
   }
 });
+
+
+
+// **********************************
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", handleScroll);
+});
+
+function handleScroll() {
+  const scrollPosition = window.scrollY;
+
+  // Check if the user has scrolled more than 900 pixels
+  if (scrollPosition > 600) {
+    animateProgressBar("html-progress", 80);
+    animateProgressBar("css-progress", 75);
+    animateProgressBar("js-progress", 85);
+
+    // Remove the event listener to avoid unnecessary animations
+    window.removeEventListener("scroll", handleScroll);
+  }
+}
+
+function animateProgressBar(id, percentage) {
+  const progressBar = document.getElementById(id);
+  progressBar.style.width = percentage + "%";
+}
+
 
 
 // *********************************************************
