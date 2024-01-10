@@ -17,6 +17,10 @@ window.addEventListener("scroll", navAnimation);
 
 
 // *********************************************
+// *********************************************
+
+//Mobile Nav Bar
+
 //Mobile menu-bar icon animation (X)
 function toggleMobileMenu() {
   const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
@@ -43,7 +47,8 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 
 
 
-// *************************************
+// *********************************************
+// *********************************************
 
 //Tying Subtitle Effect
 
@@ -129,7 +134,10 @@ window.addEventListener("scroll", () => {
 
 
 
-// **********************************
+// *********************************************
+// *********************************************
+
+//About Me -  Progress Bar Animation
 
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
@@ -156,72 +164,54 @@ function animateProgressBar(id, percentage) {
 
 
 
-// *********************************************************
+// *********************************************
+// *********************************************
 
-// let cardfront1 = document.querySelector(".card-1-front");
-// let cardBack1 = document.querySelector(".card-1-back");
+// Card-1
+arrow1up = document.querySelector(".circle-up-1")
+arrow1down = document.querySelector(".circle-down-1")
+
+let cardBack1 = document.querySelector(".card-1-back");
+
+arrow1up.addEventListener("click", () =>{
+  cardBack1.classList.add("card-1-back-js");
+})
+
+arrow1down.addEventListener("click", () =>{
+  cardBack1.classList.remove("card-1-back-js");
+})
 
 
-// cardfront1.addEventListener("mouseenter", () => {
-//     cardBack1.classList.add("card-1-back-js");
-// });
+// Card-2
 
-
-// cardfront1.addEventListener("mouseleave", () => {
-//     cardBack1.classList.remove("card-1-back-js");
-// });
-
-// *************
+arrow2up = document.querySelector(".circle-up-2")
+arrow2down = document.querySelector(".circle-down-2")
 
 let cardBack2 = document.querySelector(".card-2-back");
-let cardfront2 = document.querySelector(".card-2-front");
 
+arrow2up.addEventListener("click", () =>{
+  cardBack2.classList.add("card-1-back-js");
+})
 
-cardfront2.addEventListener("mouseenter", () => {
-    cardBack2.classList.add("card-1-back-js");
-});
+arrow2down.addEventListener("click", () =>{
+  cardBack2.classList.remove("card-1-back-js");
+})
 
+// Card-3
 
-cardfront2.addEventListener("mouseleave", () => {
-    cardBack2.classList.remove("card-1-back-js");
-});
-// *************
+arrow3up = document.querySelector(".circle-up-3")
+arrow3down = document.querySelector(".circle-down-3")
 
 let cardBack3 = document.querySelector(".card-3-back");
-let cardfront3 = document.querySelector(".card-3-front");
 
-cardfront3.addEventListener("mouseenter", () => {
-    cardBack3.classList.add("card-1-back-js");
-});
+arrow3up.addEventListener("click", () =>{
+  cardBack3.classList.add("card-1-back-js");
+})
 
-
-cardfront3.addEventListener("mouseleave", () => {
-    cardBack3.classList.remove("card-1-back-js");
-});
-
-// *******************************
-// Experience section
-
-// experienceSection = document.querySelector("#project").offsetHeight;
-
-// projectSection = document.querySelector(".black").style.marginTop = experienceSection/2 +"px";
+arrow3down.addEventListener("click", () =>{
+  cardBack3.classList.remove("card-1-back-js");
+})
 
 
-// *******************************
-// Get the video element
-// var myVideo = document.querySelector(".project-1-video");
-
-// // Function to start the video
-// function startVideo() {
-//   myVideo.play();
-// }
-
-// // Function to pause the video
-// function pauseVideo() {
-//   myVideo.pause();
-// }
-
-
-
-
-
+// *********************************************
+// *********************************************
