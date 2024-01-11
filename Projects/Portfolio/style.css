@@ -6,9 +6,13 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
 
 }
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
 
 .nav-bar {
     display: flex;
@@ -23,12 +27,12 @@ html {
 }
 
 .nav-bar.sticky-bg {
-    background-color: #20232a;
+    background-color: #0e46a2;;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links li {
@@ -43,49 +47,52 @@ html {
 }
 
 .nav-links a:hover {
-    color: #FFD700;
+    color: #b6c2e8;
 }
 
 .hero-section {
-    background: url("./pawel-czerwinski-prMn9KINLtI-unsplash.jpg");
-    background: linear-gradient(to bottom, #41B3A3, #1C344C);
-
-    background: linear-gradient(to bottom, #3498db, #2c3e50);
+    padding: 8rem 10% 5%;
+    background: linear-gradient(to bottom, #0e46a2, #6b99f1);
     color: #fff;
-    padding: 7rem 10% 3rem;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    /* gap: 3rem; for tab responsive */
+    height: 100vh;
+}
 
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.header {
+    text-align: center;
+    /* color: #efecee; Light text color for contrast */
 }
 
 .mobile-hero-pic {
     display: none;
 }
 
-.title {
-    margin-top: 4rem;
-}
-
-.title p {
+/* .title p {
     font-size: 1.5rem;
     font-weight: normal;
     margin-bottom: 2rem;
-}
+} */
 
 .title h1 {
+    color: #fff; 
     font-size: 4rem;
-    color: #FFD700;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .subtitle h2 {
+    color: #b6c2e8; 
+    font-size: 1.8rem;
+    font-weight: 500;
     margin-top: 1rem;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    font-weight: normal;
+
 }
 
 .cursor {
@@ -107,7 +114,7 @@ html {
 
 .button-container {
     display: flex;
-    gap: 2rem;
+    justify-content: space-evenly;
     margin-top: 3rem;
     text-align: center;
 }
@@ -116,18 +123,21 @@ html {
     display: inline-block;
     padding: 1rem 2rem;
     text-decoration: none;
-    color: #fff;
+    
+    background-color: #efecee;
+    border: 2px solid #efecee;
+    color: #0e46a2;
+
     font-size: 1.2rem;
-    background-color: #FFD700;
-    border: 2px solid #FFD700;
     border-radius: 5px;
     transition: all 0.3s ease;
     cursor: pointer;
+
 }
 
 .button:hover {
-    background-color: transparent;
-    color: #FFD700;
+    background-color: #0e46a2;
+    color: #efecee;
 }
 
 
@@ -267,33 +277,33 @@ html {
 /* Section 2: */
 
 .about-me {
-    background: #4b576e;
-    /* Dark background color */
-    padding: 3rem 10%;
+    background:#4f71ba;
+    padding: 6rem 10%;
     color: #fff;
+}
+
+.about-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .content {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 5%;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .profile-container {
-    /* flex-basis: 40%; */
-    flex-basis: auto;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .profile-pic {
-    width: 100%;
     height: 400px;
     border-radius: 15px;
+    background: #b6c2e8;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: #3C4558;
 }
 
 .profile-container:hover .profile-pic {
@@ -303,21 +313,10 @@ html {
 
 .text-content {
     flex-basis: 60%;
-    text-align: left;
-}
-
-.about-me h2 {
-    position: relative;
-    left: 43.3%;
-    width: 300px;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #FFD700;
-    /* Accent color */
 }
 
 .text-content p {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 1.2rem;
     line-height: 1.6;
 }
@@ -389,13 +388,18 @@ html {
 
 
 #experience {
-    background: #393E46;
-    /* Dark background color */
-    padding: 3rem 10%;
+    background:#6385ce;
+    background-color: #35415c;
+    background: url("./Images/Satelitte\ background\ image.PNG");
+    background-size: cover;
+    background-attachment: fixed;
+
+    padding: 5rem 10%;
     color: #fff;
-    height: 680px;
+    /* height: auto; */
     overflow: hidden;
 }
+
 
 .experience-section {
     display: flex;
@@ -405,9 +409,9 @@ html {
 #experience h2 {
     position: relative;
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: #FFD700;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
 }
 
 .card-1,
@@ -489,18 +493,19 @@ html {
     height: 480px;
     background-color: rgb(62, 62, 75);
     padding: 0 20px;
-    transform: translateY(0);
+    /* transform: translateY(-80px); */
     transition: all 1s;
+    margin-top: 5rem;
 
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    justify-content:flex-end;
+    justify-content: center;
+    /* justify-content:flex-end; */
     align-items: center;
 }
 
 .card-1-back-js {
-    transform: translateY(-100%);
+    transform: translateY(-560px);
 }
 
 
@@ -524,12 +529,12 @@ html {
     padding-top: 10px;
 }
 
-.test {
+/* .test {
     position: relative;
     background-color: #393E46;
     width: 80vw;
     height: 400px;
-}
+} */
 
 
 
