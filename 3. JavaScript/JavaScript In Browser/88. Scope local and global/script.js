@@ -2,17 +2,19 @@
 
 let c = 5
 
-{    console.log(c)
-
+{   
+     console.log(c)
 }
 
-console.log(c)
 
 const myFun2 = () =>{
     console.log(c)
 }
 
 myFun2()
+
+
+console.log(c)
 
 // ************************
 
@@ -28,7 +30,7 @@ console.log(a) //OUTPUT: Uncaught ReferenceError: a is not defined
 
 
 
-// Functional level scope
+ // Functional level scope
 const myFun = () =>{
     let b = 10
 }
