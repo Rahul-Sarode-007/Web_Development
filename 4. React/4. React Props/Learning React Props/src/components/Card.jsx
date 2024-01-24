@@ -4,6 +4,7 @@ import Detail from "./Detail";
 import Name from "./Name";
 
 export default function Card(props) {
+
   return (
     <div className="card">
       <div className="top">
