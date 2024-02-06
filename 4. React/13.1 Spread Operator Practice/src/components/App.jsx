@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 
-function App() {
-  let value = ""
+export default function App() {
+  let [value, setValue] = useState("");
+  let [items, setItems] = useState([]);
 
+  const handleChange = (event) => {
+    value = event.target.value;
+    setValue(value);
+  };
 
-  const [item, setItem] = useState("")
-  const [myItems, setMyItems] = useState(["add Items"])
-
-  const handleChange = (event) =>{
-    value = event.target.value
-    console.log(value)
-  }
-
-
-  const handleClick = () =>{
-    myItems.push(value)
-    console.log(myItems);
-    setItem(...myItems)
-  }
-
-
+  const handleClick = () => {
+    setItems((prevValue) => [...prevValue, value]);
+    setValue("");
+  };
 
   return (
     <div className="container">
@@ -27,25 +20,24 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input type="text" 
+        <input
+          value={value}
+          name="itemInput"
+          type="text"
           onChange={handleChange}
         />
+
         <button onClick={handleClick}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-        {myItems.map((item)=>{
-          console.log(item)
-          return <li>{item}</li>
-        })}
+          {items.map((item, index) => {
+            return <li key={index}>{item}</li>;
+          })}
         </ul>
-        
-
       </div>
     </div>
   );
 }
-
-export default App;
