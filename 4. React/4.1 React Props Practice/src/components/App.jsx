@@ -15,9 +15,6 @@ export default function App() {
     </div>
   );
 
-
-  
-
   function Button(props){
  
 
