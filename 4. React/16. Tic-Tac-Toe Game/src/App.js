@@ -10,6 +10,21 @@ function Square({ value, onSquareClick }) {
   );
 }
 
+function Status({squares, xIsNext}){
+  const winner = calculateWinner(squares);
+  let gameStatus;
+  if (winner) {
+    gameStatus = "Winner is " + winner;
+  } else {
+    gameStatus = "Next player is: " + (xIsNext ? "X" : "O");
+  }
+
+  return(
+    <div className="status">{gameStatus}</div>  
+  )
+
+}
+
 function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, SetSquares] = useState(Array(9).fill(null));
@@ -29,20 +44,10 @@ function Board() {
   }
 
 
-
-  const winner = calculateWinner(squares);
-  let gameStatus;
-  if (winner) {
-    gameStatus = "Winner is " + winner;
-  } else {
-    gameStatus = "Next player is: " + (xIsNext ? "X" : "O");
-  }
-
-
-
   return (
     <>
-      <div className="status">{gameStatus}</div>
+      <Status squares={squares} xIsNext={xIsNext}/>
+
       <div className="board-row">
         <Square
           onSquareClick={() => {handleClick(0);}}
@@ -96,6 +101,7 @@ export default function Game (){
   return(
     <div className="game">
       <div className="game-board">
+          <Board />
       </div>
       <div className="game-info">
         <ol>{/*TODO*/}</ol>
@@ -119,12 +125,9 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      console.log(`${squares[a]} is the winner`);
       return squares[a];
     }
   }
-
-  console.log("No winner yet");
   return null;
 }
 
