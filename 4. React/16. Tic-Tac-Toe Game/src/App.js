@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-function Square({ value, onSquareClick }) {
+function Square({ onSquareClick, value }) {
   return (
     <>
       <button onClick={onSquareClick} className="square">
@@ -10,104 +10,109 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-function Status({squares, xIsNext}){
-  const winner = calculateWinner(squares);
-  let gameStatus;
-  if (winner) {
-    gameStatus = "Winner is " + winner;
-  } else {
-    gameStatus = "Next player is: " + (xIsNext ? "X" : "O");
-  }
-
-  return(
-    <div className="status">{gameStatus}</div>  
-  )
-
-}
-
-function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
+export default function App() {
   const [squares, SetSquares] = useState(Array(9).fill(null));
+  const [isXNext, setIsXNext] = useState(true);
 
   function handleClick(i) {
-    if (calculateWinner(squares) || squares[i]) {
+    if ((squares[i] || calculateWinner(squares))) {
+
       return;
     }
     const nextSquares = squares.slice();
-    if (xIsNext) {
+    if (isXNext) {
       nextSquares[i] = "X";
     } else {
       nextSquares[i] = "O";
     }
     SetSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    setIsXNext(!isXNext);
+    console.log("I am clicked", nextSquares);
   }
 
+  const status = calculateWinner(squares);
+  let statusMessage = "";
+  let statusClass = "";
+
+  if (status) {
+    statusMessage = `Winner is ${status}`;
+    statusClass = "winner";
+  }
+  else if (squares.every((square) => square !== null)) {
+    statusMessage = "It's a draw!";
+    statusClass = "draw";
+  }
+  else {
+    statusMessage = `Next is: ${isXNext ? "X" : "O"}`;
+  }
 
   return (
-    <>
-      <Status squares={squares} xIsNext={xIsNext}/>
-
+    <div className="game">
+      <div className={`${statusClass} game-info`}>{statusMessage}</div>
       <div className="board-row">
         <Square
-          onSquareClick={() => {handleClick(0);}}
+          onSquareClick={() => {
+            handleClick(0);
+          }}
           value={squares[0]}
         />
         <Square
-          onSquareClick={() => {handleClick(1);}}
+          onSquareClick={() => {
+            handleClick(1);
+          }}
           value={squares[1]}
         />
         <Square
-          onSquareClick={() => {handleClick(2);}}
+          onSquareClick={() => {
+            handleClick(2);
+          }}
           value={squares[2]}
         />
       </div>
 
       <div className="board-row">
         <Square
-          onSquareClick={() => {handleClick(3);}}
+          onSquareClick={() => {
+            handleClick(3);
+          }}
           value={squares[3]}
         />
         <Square
-          onSquareClick={() => {handleClick(4);}}
+          onSquareClick={() => {
+            handleClick(4);
+          }}
           value={squares[4]}
         />
         <Square
-          onSquareClick={() => {handleClick(5);}}
+          onSquareClick={() => {
+            handleClick(5);
+          }}
           value={squares[5]}
         />
       </div>
 
       <div className="board-row">
         <Square
-          onSquareClick={() => {handleClick(6);}}
+          onSquareClick={() => {
+            handleClick(6);
+          }}
           value={squares[6]}
         />
         <Square
-          onSquareClick={() => {handleClick(7);}}
+          onSquareClick={() => {
+            handleClick(7);
+          }}
           value={squares[7]}
         />
         <Square
-          onSquareClick={() => {handleClick(8);}}
+          onSquareClick={() => {
+            handleClick(8);
+          }}
           value={squares[8]}
         />
       </div>
-    </>
-  );
-}
-
-
-export default function Game (){
-  return(
-    <div className="game">
-      <div className="game-board">
-          <Board />
-      </div>
-      <div className="game-info">
-        <ol>{/*TODO*/}</ol>
-      </div>
     </div>
-  )
+  );
 }
 
 function calculateWinner(squares) {
@@ -121,13 +126,12 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
-
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      console.log(squares[a], "is winner");
       return squares[a];
     }
   }
   return null;
 }
-
