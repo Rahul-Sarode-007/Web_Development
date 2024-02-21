@@ -5,6 +5,16 @@ body {
   background-color: #f0f0f0;
 }
 
+.container{
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.player-scoreborad{
+  margin-top: 100px;
+}
+
 h1 {
   font-size: 32px;
   margin-top: 0;
@@ -16,7 +26,7 @@ h1 {
   background: #fff;
   border: 1px solid #ccc;
   float: left;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 34px;
   height: 80px;
@@ -60,4 +70,9 @@ h1 {
 .draw {
   color: #555;
   font-weight: bold;
+}
+
+.reset{
+  margin-top: 20px;
+  padding: 10px 20px;
 }
