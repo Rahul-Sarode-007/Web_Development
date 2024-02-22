@@ -38,25 +38,32 @@ export default function App() {
     }
     SetSquares(nextSquares);
     setIsXNext(!isXNext);
+
+    const winner = calculateWinner(nextSquares);
+    if (winner) {
+      if (winner === "X") {
+        setScore1(score1 + 1);
+      } else {
+        setScore2(score2 + 1);
+      }
+    }
   }
 
   const status = calculateWinner(squares);
   let statusMessage = "";
   let statusClass = "";
 
-  if (status) {
-    if(status === "X") {
-    setScore1(score1+1)
-    }
-    else{
-    setScore2(score2+1)
-    }
+  if (status ) {
     statusMessage = `Winner is ${status}`;
     statusClass = "winner";
-  } else if (squares.every((square) => square !== null)) {
+  } 
+  
+  else if (squares.every((square) => square !== null)) {
     statusMessage = "It's a draw!";
     statusClass = "draw";
-  } else {
+  } 
+  
+  else {
     statusMessage = `Next is: ${isXNext ? "X" : "O"}`;
   }
 
@@ -65,13 +72,17 @@ export default function App() {
     setIsXNext(true);
     statusMessage = "";
     statusClass = "";
+
+
   }
 
   return (
     <div className="container">
       <div className="player-scoreborad">
         <h2>Player 1 score</h2>
-        <p className="player1-score">{score1}</p>
+        <p>{score1}</p>
+
+        
       </div>
       <div className="game">
         <div className={`${statusClass} game-info`}>{statusMessage}</div>
@@ -141,7 +152,7 @@ export default function App() {
       </div>
       <div className="player-scoreborad">
         <h2>Player 2 score</h2>
-        <p className="player2-score">{score2}</p>
+        <p>{score2}</p>
       </div>
     </div>
   );
