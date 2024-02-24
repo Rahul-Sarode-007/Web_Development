@@ -1,22 +1,29 @@
+*{
+
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Arial', sans-serif;
-  margin: 20px;
+  margin: 0;
   padding: 0;
   background-color: #f0f0f0;
 }
 
-.container{
+.container {
   display: flex;
   justify-content: space-around;
-  /* align-items: center; */
+  align-items: center;
+  height: 100vh;
 }
 
-.player-scoreborad{
-  margin-top: 100px;
+.player-scoreborad {
+  text-align: center;
+  margin-top: 20px;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 36px;
   margin-top: 0;
   color: #333;
 }
@@ -24,18 +31,18 @@ h1 {
 .square {
   cursor: pointer;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   float: left;
-  font-size: 30px;
+
+  font-size: 36px;
   font-weight: bold;
-  line-height: 34px;
+  line-height: 1.2;
   height: 80px;
-  margin-right: -1px;
-  margin-top: -1px;
+  width: 80px;
+  margin: 0;
   padding: 0;
   text-align: center;
-  width: 80px;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .square:hover {
@@ -49,7 +56,6 @@ h1 {
 }
 
 .game {
-  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,9 +63,10 @@ h1 {
 }
 
 .game-info {
-  margin-bottom: 20px;
+  margin: 20px 0;
   font-size: 20px;
-  color: #777;
+  color: #555;
+  text-align: center;
 }
 
 .winner {
@@ -72,7 +79,18 @@ h1 {
   font-weight: bold;
 }
 
-.reset{
+.reset {
   margin-top: 20px;
   padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.reset:hover {
+  background-color: #45a049;
 }
