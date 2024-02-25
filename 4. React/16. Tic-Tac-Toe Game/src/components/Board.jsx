@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Board({ squares, handleClick }) {
+export default function Board({ squares, handleClick, isXNext }) {
   const renderSquare = (i) => {
     return (
-      <button onClick={() => handleClick(i)} key={i} className="square">
+      <button onClick={() => handleClick(i)} key={i} className="square"
+      // className={!isXNext?"sign-classX":"sign-classO"}
+      >
         {squares[i]}
       </button>
     );

@@ -7,7 +7,12 @@ export default function Status({ calculateWinner, squares, isXNext }) {
 
   if (status) {
     statusMessage = `Winner is ${status}`;
-    statusClass = "winner";
+    if(status === "X"){
+      statusClass = "winner";
+    }
+    else{
+      statusClass = "winner-O"
+    }
   } else if (squares.every((square) => square !== null)) {
     statusMessage = "It's a draw!";
     statusClass = "draw";
@@ -15,5 +20,7 @@ export default function Status({ calculateWinner, squares, isXNext }) {
     statusMessage = `Next is: ${isXNext ? "X" : "O"}`;
   }
 
-  return <div className={`${statusClass} game-info`}>{statusMessage}</div>;
+  return <h1 className={`${statusClass} game-info`}>
+  {statusMessage}
+  </h1>;
 }
