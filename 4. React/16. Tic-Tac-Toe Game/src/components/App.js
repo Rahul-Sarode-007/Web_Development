@@ -19,6 +19,10 @@ export default function App() {
   const [b, setB] = useState("O");
   const [c, setC] = useState("");
 
+  const[player1, setPlayer1] = useState("")
+  const[player2, setPlayer2] = useState("")
+
+
   const handleSwapSign = (sign) => {
     if (sign === a) {
       setSignX("X");
@@ -80,27 +84,38 @@ export default function App() {
 
   const handlePromptClick = () => {
     // Using window.prompt to get user input
-    const player1 = window.prompt("Enter Player 1 name");
-    const player2 = window.prompt("Enter Player 2 name");
+    const player1 = prompt("Enter Player 1 name");
+    const player2 = prompt("Enter Player 2 name");
 
     console.log("Player1:", player1);
     console.log("Player2:", player2);
+
+    setPlayer1(player1)
+    setPlayer2(player2)
+
   };
+
+
 
   return (
     <div className="outter-container">
-      {/* <div>
+      { <div>
         <button onClick={handlePromptClick}>Start the Game</button>
-      </div> */}
+      </div> }
       <img className="title" src="./images/Tic tac toe logo.png" alt=""></img>
 
       <div className="container">
-        <ScoreBoard score={score1} id={1} sign={signX} />
+        <ScoreBoard score={score1} id={player1} sign={signX} />
         <div className="game">
           <Status
             calculateWinner={calculateWinner}
             squares={squares}
             isXNext={isXNext}
+            player1={player1}
+            player2={player2}
+            signX={signX}
+            signY={signO}
+
           />
           <Board
             squares={squares}
@@ -109,7 +124,7 @@ export default function App() {
           />
           <ResetButton setSquares={setSquares} setIsXNext={setIsXNext} />
         </div>
-        <ScoreBoard score={score2} id={2} sign={signO} />
+        <ScoreBoard score={score2} id={player2} sign={signO} />
       </div>
       <p className="copyright">Rahul Sarode © 2024</p>
     </div>

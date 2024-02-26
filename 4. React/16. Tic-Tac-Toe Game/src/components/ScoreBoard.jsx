@@ -1,10 +1,12 @@
 import React from "react";
 
 export default function ScoreBoard({ score, id, sign }) {
+
+
   return (
     <>
       <div className={`score-borad-${id} player-scoreborad`}>
-        <h1 className={sign === "X" ? "sign-classX" : "sign-classO"}>Player {id}</h1>
+        <h1 className={sign === "X" ? "sign-classX" : "sign-classO"}>{id}</h1>
         <h2>
           Symbol:{" "}
           <span className={sign === "X" ? "sign-classX" : "sign-classO"}>
