@@ -12,6 +12,9 @@ export default function App() {
   let [score1, setScore1] = useState(0);
   let [score2, setScore2] = useState(0);
 
+  const[player1, setPlayer1] = useState("")
+  const[player2, setPlayer2] = useState("")
+
   const [signX, setSignX] = useState("X");
   const [signO, setSignO] = useState("O");
 
@@ -19,8 +22,7 @@ export default function App() {
   const [b, setB] = useState("O");
   const [c, setC] = useState("");
 
-  const[player1, setPlayer1] = useState("")
-  const[player2, setPlayer2] = useState("")
+  const [statusPlayer, setStatusPlayer] = useState(true)
 
 
   const handleSwapSign = (sign) => {
@@ -74,6 +76,7 @@ export default function App() {
       }
       if (winner === "O") {
         handleSwapSign("O");
+        setStatusPlayer(!statusPlayer)
       }
     }
 
@@ -111,10 +114,9 @@ export default function App() {
             calculateWinner={calculateWinner}
             squares={squares}
             isXNext={isXNext}
-            player1={player1}
-            player2={player2}
-            signX={signX}
-            signY={signO}
+            player =
+            {statusPlayer ? {player1, player2} : {player1: player2, player2: player1}}
+            player1 = {player1} player2 = {player2}
 
           />
           <Board
