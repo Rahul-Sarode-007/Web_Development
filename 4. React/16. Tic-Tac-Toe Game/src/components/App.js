@@ -23,7 +23,7 @@ export default function App() {
   const [c, setC] = useState("");
 
   const [statusPlayer, setStatusPlayer] = useState(true)
-
+  const [winnerName, setWinnerName] = useState("")
 
   const handleSwapSign = (sign) => {
     if (sign === a) {
@@ -99,7 +99,6 @@ export default function App() {
   };
 
 
-
   return (
     <div className="outter-container">
       { <div>
@@ -114,10 +113,8 @@ export default function App() {
             calculateWinner={calculateWinner}
             squares={squares}
             isXNext={isXNext}
-            player =
-            {statusPlayer ? {player1, player2} : {player1: player2, player2: player1}}
-            player1 = {player1} player2 = {player2}
-
+            player ={statusPlayer ? {player1, player2} 
+            : {player1: player2, player2: player1}}
           />
           <Board
             squares={squares}
