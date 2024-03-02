@@ -1,4 +1,5 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
+import StartGame from "./StartGame";
 import Board from "./Board";
 import Status from "./Status";
 import ScoreBoard from "./ScoreBoard";
@@ -12,8 +13,8 @@ export default function App() {
   let [score1, setScore1] = useState(0);
   let [score2, setScore2] = useState(0);
 
-  const[player1, setPlayer1] = useState("")
-  const[player2, setPlayer2] = useState("")
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
 
   const [signX, setSignX] = useState("X");
   const [signO, setSignO] = useState("O");
@@ -22,8 +23,8 @@ export default function App() {
   const [b, setB] = useState("O");
   const [c, setC] = useState("");
 
-  const [statusPlayer, setStatusPlayer] = useState(true)
-  const [winnerName, setWinnerName] = useState("")
+  const [statusPlayer, setStatusPlayer] = useState(true);
+  const [winnerName, setWinnerName] = useState("");
 
   const handleSwapSign = (sign) => {
     if (sign === a) {
@@ -76,7 +77,7 @@ export default function App() {
       }
       if (winner === "O") {
         handleSwapSign("O");
-        setStatusPlayer(!statusPlayer)
+        setStatusPlayer(!statusPlayer);
       }
     }
 
@@ -85,35 +86,27 @@ export default function App() {
     setIsXNext(!isXNext);
   }
 
-  const handlePromptClick = () => {
-    // Using prompt to get user input
-    const player1 = prompt("Enter Player 1 name");
-    const player2 = prompt("Enter Player 2 name");
-
-    setPlayer1(player1)
-    setPlayer2(player2)
-
-  };
-
-
   return (
-    <div className="outter-container">
-      <div>
-        <button onClick={handlePromptClick}>Start the Game</button>
-      </div> 
+   
+    <div  className={`outter-container`}>
+      <StartGame setPlayer1={setPlayer1} setPlayer2={setPlayer2}/>
+
       <img className="title" src="./images/Tic tac toe logo.png" alt=""></img>
 
-      <div className="container">
+      <div className={`container ${ player2? "modal-close" : ""}`}>
         <ScoreBoard score={score1} id={player1} sign={signX} />
         <div className="game">
           <Status
             calculateWinner={calculateWinner}
             squares={squares}
             isXNext={isXNext}
-            player ={statusPlayer ? {player1, player2} 
-            : {player1: player2, player2: player1}}
-            setWinnerName = {setWinnerName}
-            winnerName = {winnerName}
+            player={
+              statusPlayer
+                ? { player1, player2 }
+                : { player1: player2, player2: player1 }
+            }
+            setWinnerName={setWinnerName}
+            winnerName={winnerName}
           />
           <Board
             squares={squares}

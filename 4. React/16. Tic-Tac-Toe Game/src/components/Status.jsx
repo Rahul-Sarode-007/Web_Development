@@ -14,17 +14,17 @@ export default function Status({
 
   if (
     squares.every((square) => square !== null) &&
-    status != "X" &&
-    status != "O"
+    status !== "X" &&
+    status !== "O"
   ) {
     statusMessage = "It's a draw!";
     statusClass = "draw";
   } else if (status === null) {
     let name = isXNext ? player.player1 : player.player2;
-    statusMessage = `Next is: ${name}`;
+    statusMessage = `Next is : ${name}`;
     setWinnerName(name);
   } else {
-    statusMessage = `Winner is ${winnerName}`;
+    statusMessage = `Winner is ${winnerName} 🥳`;
     statusClass = "winner";
   }
 
