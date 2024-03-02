@@ -1,32 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Status({
   calculateWinner,
   squares,
   isXNext,
-  player
+  player,
+  setWinnerName,
+  winnerName,
 }) {
   const status = calculateWinner(squares);
   let statusMessage = "";
   let statusClass = "";
 
-
-  if (status) {
-    if (status==="X") { //blue
-      statusMessage = `Winner is X`;
-      statusClass = "winner";
-
-    }
-    if (status==="O") {
-      statusClass = "winner-O"; 
-      statusMessage = `Winner is O`;
-    }
-
-  } else if (squares.every((square) => square !== null)) {
+  if (
+    squares.every((square) => square !== null) &&
+    status != "X" &&
+    status != "O"
+  ) {
     statusMessage = "It's a draw!";
     statusClass = "draw";
+  } else if (status === null) {
+    let name = isXNext ? player.player1 : player.player2;
+    statusMessage = `Next is: ${name}`;
+    setWinnerName(name);
   } else {
-    statusMessage = `Next is: ${isXNext ? player.player1 : player.player2}`;
+    statusMessage = `Winner is ${winnerName}`;
+    statusClass = "winner";
   }
 
   return <h1 className={`${statusClass} game-info`}>{statusMessage}</h1>;

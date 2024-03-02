@@ -86,12 +86,9 @@ export default function App() {
   }
 
   const handlePromptClick = () => {
-    // Using window.prompt to get user input
+    // Using prompt to get user input
     const player1 = prompt("Enter Player 1 name");
     const player2 = prompt("Enter Player 2 name");
-
-    console.log("Player1:", player1);
-    console.log("Player2:", player2);
 
     setPlayer1(player1)
     setPlayer2(player2)
@@ -101,9 +98,9 @@ export default function App() {
 
   return (
     <div className="outter-container">
-      { <div>
+      <div>
         <button onClick={handlePromptClick}>Start the Game</button>
-      </div> }
+      </div> 
       <img className="title" src="./images/Tic tac toe logo.png" alt=""></img>
 
       <div className="container">
@@ -115,6 +112,8 @@ export default function App() {
             isXNext={isXNext}
             player ={statusPlayer ? {player1, player2} 
             : {player1: player2, player2: player1}}
+            setWinnerName = {setWinnerName}
+            winnerName = {winnerName}
           />
           <Board
             squares={squares}
