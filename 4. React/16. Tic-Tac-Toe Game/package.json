@@ -1,10 +1,16 @@
 {
+<<<<<<< HEAD
   "homepage":"https://rahul-sarode-007.github.io/react-tic-tac-toe-app",
+=======
+  "homepage": "https://rahul-sarode-007.github.io/Tic-Tac-Toe-Game/",
+>>>>>>> bdc4ebd977c7954a0ebd2967928428bc6ec80204
   "name": "react.dev",
   "version": "0.1.0",
   "main": "/src/index.js",
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -17,6 +23,8 @@
     "react-scripts": "^5.0.0"
   },
   "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^6.1.1"
   }
 }
