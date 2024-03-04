@@ -1,12 +1,15 @@
 {
+  "homepage":"https://rahul-sarode-007.github.io/react-tic-tac-toe-app",
   "name": "react.dev",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "/src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.0.0",
