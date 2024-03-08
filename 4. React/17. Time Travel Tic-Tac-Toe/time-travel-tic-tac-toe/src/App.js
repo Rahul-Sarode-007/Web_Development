@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-function Square({value, onSquareClick}) {
+function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
       {value}
@@ -8,9 +8,8 @@ function Square({value, onSquareClick}) {
   );
 }
 
-export default function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+function Board({xIsNext,squares,onPlay}) {
+
 
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
@@ -18,20 +17,19 @@ export default function Board() {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[i] = 'X';
+      nextSquares[i] = "X";
     } else {
-      nextSquares[i] = 'O';
+      nextSquares[i] = "O";
     }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares)
   }
 
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "Winner: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -51,6 +49,49 @@ export default function Board() {
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </>
+  );
+}
+
+export default function Game() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquare = history[history.length - 1]
+
+  function handlePlay(nextSquares){
+    setHistory([...history,nextSquares])
+    setXIsNext(!xIsNext)
+    console.log(history)
+  }
+
+  function jumpTo(nextMove){
+
+  }
+
+  const moves = history.map((squares,move)=>{
+    let discription
+    if(move>0){
+      discription = "Go to move #" + move;
+    }
+    else{
+      discription = "Go to game start"
+    }
+
+    return (
+      <li key={move}>
+        <button onCanPlay={()=>{jumpTo(move)}}>{discription}</button>
+      </li>
+    )
+  })
+
+  return (
+    <>
+      <div className="game">
+        <div className="game-board">
+          <Board xIsNext={xIsNext} squares={currentSquare} onPlay={handlePlay}/>
+        </div>
+        <div className="game-info">{moves}</div>
       </div>
     </>
   );
