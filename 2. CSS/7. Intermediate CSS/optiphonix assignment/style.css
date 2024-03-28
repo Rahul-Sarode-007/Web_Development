@@ -1,0 +1,40 @@
+/* body{
+  background-color: bisque;  
+}
+
+li[value="3"]{
+    color: red;
+}
+
+.hor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr
+}
+
+p{
+    border: 1px solid red;
+} */
+
+
+.div-1{
+    height: 200px;
+    width: 200px;
+    background-color: aquamarine;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-2{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+
+.circle{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
