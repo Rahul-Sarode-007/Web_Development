@@ -65,12 +65,20 @@ function App() {
   let symbol = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 
   useEffect(() => {
-    if (numAllowed) {
+    if (numAllowed && !symbolAllowed) {
       setPasswordString([...char, ...number]);
+      console.log("num-on, sym-off");
+    } else if (!numAllowed && symbolAllowed) {
+      setPasswordString([...char, ...symbol]);
+      console.log("num-off, sym-on");
+    } else if (numAllowed && symbolAllowed) {
+      setPasswordString([...char, ...number, ...symbol]);
+      console.log("num-on, sym-on");
     } else {
       setPasswordString([...char]);
+      console.log("num-off, sym-off");
     }
-  }, [numAllowed]);
+  }, [numAllowed, symbolAllowed, silderValue]);
 
   useEffect(() => {
     if (symbolAllowed) {
@@ -104,6 +112,7 @@ function App() {
             setSilderValue(e.target.value);
           }}
         ></input>
+        <label> Length({silderValue})</label>
       </div>
 
       <div className="checkboxes">
