@@ -80,13 +80,7 @@ function App() {
     }
   }, [numAllowed, symbolAllowed, silderValue]);
 
-  useEffect(() => {
-    if (symbolAllowed) {
-      setPasswordString([...char, ...symbol]);
-    } else {
-      setPasswordString([...char]);
-    }
-  }, [symbolAllowed]);
+
 
   const passwordGenerator = (length) => {
     let newPassword = "";
