@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function App() {
-  const [silderValue, setSilderValue] = useState(8);
+  const [length, setLength] = useState(8);
   const [passwordString, setPasswordString] = useState("qwerty");
   const [numAllowed, setNumAllowed] = useState(false);
   const [symbolAllowed, setSymbolAllowed] = useState(false);
@@ -78,7 +78,7 @@ function App() {
       setPasswordString([...char]);
       console.log("num-off, sym-off");
     }
-  }, [numAllowed, symbolAllowed, silderValue]);
+  }, [numAllowed, symbolAllowed, length]);
 
 
 
@@ -91,7 +91,7 @@ function App() {
     return newPassword;
   };
 
-  let newPassword = passwordGenerator(silderValue);
+  let newPassword = passwordGenerator(length);
 
   return (
     <>
@@ -101,12 +101,12 @@ function App() {
           type="range"
           min={1}
           max={20}
-          value={silderValue}
+          value={length}
           onChange={(e) => {
-            setSilderValue(e.target.value);
+            setLength(e.target.value);
           }}
         ></input>
-        <label> Length({silderValue})</label>
+        <label> Length({length})</label>
       </div>
 
       <div className="checkboxes">
