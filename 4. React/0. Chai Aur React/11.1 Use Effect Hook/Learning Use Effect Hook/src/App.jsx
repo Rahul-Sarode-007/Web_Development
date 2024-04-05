@@ -2,25 +2,27 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Nav from './components/Nav'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [count2, setCount2] = useState(0)
+
+
 
 
   useEffect(()=>{
-    console.log("Case 1: No dependencies array, will run this useEffect block code with each render")
-  })
-  
-  useEffect(()=>{
-    console.log("Case 2: Empty array [] dependencies, will run this useEffect block only first time when page render.")
+    console.log("App Component - Case 2: Empty array [] dependencies, will run this useEffect block only first time when page render.")
   },[])
 
   useEffect(()=>{
-    console.log("Case 3: filled array [count], will run the useEffect block code when dependencies change")
+    console.log("App Component - Case 3: filled array [count], will run the useEffect block code when dependencies change")
+    setCount2(count2+1)
   },[count])
 
   return (
     <>
+    <Nav count2={count2}/>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
