@@ -1,18 +1,29 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/Navbar'
 
 
 
 function App() {
+
+  const nums = new Array(30000000).fill(0).map((_,i)=>{
+    return{
+      index: i,
+      isMagical: i==29000000
+    }
+  })
+
   const [count, setCount] = useState(0)
+  const [numbers, setNumbers] = useState(nums)
+
+  // const magical = numbers.find((item)=>item.isMagical==true)
+  const magical =  useMemo(() => numbers.find((item)=>item.isMagical===true),[])
 
   return (
     <>
-    <Navbar ajective={"good"}/>
       <div>
+      <span>Magical number is {magical ? magical.index : 'not found'}</span>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
