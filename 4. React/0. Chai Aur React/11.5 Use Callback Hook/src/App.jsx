@@ -1,22 +1,26 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/Navbar'
+import { useCallback, useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [ajective, setAjective] = useState("good")
+  const [count, setCount] = useState(0);
+  const [ajective, setAjective] = useState("good");
 
- const getAjective = () =>{
-  // return "Another"
-  console.log("running getAjective")
- }
+  //  const getAjective = () =>{
+  //   return "Another"
+  //  }
+
+   const getAjective = useCallback(()=>{
+    return "Another " + count
+   },[count])
+
+
 
   return (
     <>
-    <Navbar ajective={ajective} getAjective={getAjective}
-    />
+      <Navbar ajective={ajective} getAjective={getAjective} />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -38,7 +42,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

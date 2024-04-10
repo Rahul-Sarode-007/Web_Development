@@ -6,7 +6,7 @@ function Navbar({ajective,getAjective}) {
   return (
     <>
     <div>I am a {ajective} Navbar</div>
-    <button onClick={()=>{getAjective()}}>button</button>
+    <button onClick={()=>{getAjective()}}>{getAjective()}</button>
     </>
   )
 }
