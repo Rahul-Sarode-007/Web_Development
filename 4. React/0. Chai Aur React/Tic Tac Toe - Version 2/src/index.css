@@ -1,0 +1,12 @@
+.square-row{
+    display: flex;
+    gap: 2px;
+    margin-bottom: 2px;
+
+}
+
+.square{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(216, 226, 231);
+}
