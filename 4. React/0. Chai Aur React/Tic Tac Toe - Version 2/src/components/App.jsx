@@ -1,13 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 
 function App() {
   const arr = new Array(9).fill(null);
   const [square, setsquare] = useState(arr);
   const [turn, setTurn] = useState(true);
+  // const [sign, setSign] = useState(true)
+  
+  // useEffect(() => {
+    
+  //   let player11=prompt("Enter Player 1 Name")
+  //   let player12=prompt("Enter Player 2 Name")
+  //   playerName.player1=player11
+  //   playerName.player2=player12  
+  // }, [])
+  
   const playerName = {
     player1: "Rahul",
     player2: "Ani",
-  };
+  }
+
+
 
   function handleClick(i) {
     if (!square[i] && !result) {
@@ -18,7 +30,20 @@ function App() {
       }
       setsquare(square);
       setTurn(!turn);
+      // setSign(!sign)
       console.log(square);
+    }
+  }
+
+  function handleReset(result) {
+    setsquare(arr);
+    // setSign(true)
+
+    if(result == "X"){
+      setTurn(true);
+    }else{
+      setTurn(false);
+      console.log(result)
     }
   }
 
@@ -34,6 +59,7 @@ function App() {
       </button>
     );
   }
+
 
   const result = calculateWinner(square);
   console.log(result);
@@ -54,8 +80,8 @@ function App() {
             ? `Winner is ${playerName.player1}`
             : `Winner is ${playerName.player2}`
           : turn
-          ? `Next is: ${playerName.player1}`
-          : `Next is: ${playerName.player2}`}
+            ? `Next is: ${playerName.player1 || "Player 1"}`
+            : `Next is: ${playerName.player2|| "Player 2"}`}
       </h1>
       <div className="square-row">
         <Sqaure i={0} />
@@ -74,6 +100,8 @@ function App() {
         <Sqaure i={7} />
         <Sqaure i={8} />
       </div>
+
+      <button onClick={()=>{handleReset(result)}} className="reset">Reset</button>
     </>
   );
 }
