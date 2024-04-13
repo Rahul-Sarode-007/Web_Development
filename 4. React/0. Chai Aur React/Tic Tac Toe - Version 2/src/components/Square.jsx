@@ -3,7 +3,7 @@ import React from "react";
 function Square({index,onSquareClick}) {
 
   return (
-    <button onClick={() => onSquareClick()} className="square">
+    <button onClick={() => onSquareClick()} className="squares">
       {index}
     </button>
   );

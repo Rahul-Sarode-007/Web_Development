@@ -1,4 +1,4 @@
-function calculateWinner(square) {
+function calculateWinner(squares) { 
   const winningpattern = [
     [0, 1, 2],
     [3, 4, 5],
@@ -14,8 +14,8 @@ function calculateWinner(square) {
 
   for (let i = 0; i < winningpattern.length; i++) {
     let [a, b, c] = winningpattern[i];
-    if (square[a] == square[b] && square[b] == square[c]) {
-      return square[a];
+    if (squares[a] == squares[b] && squares[b] == squares[c]) {
+      return squares[a];
     }
   }
   return null;

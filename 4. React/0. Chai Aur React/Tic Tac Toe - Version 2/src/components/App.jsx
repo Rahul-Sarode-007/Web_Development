@@ -5,28 +5,26 @@ import GameStatus from "./GameStatus";
 import calculateWinner from "./winner_function";
 
 function App() {
-  const [square, setsquare] = useState(Array(9).fill(null));
+  const [squares, setSquares] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(true);
 
   //Square click callback function.
   function handleClick(i) {
-    //Return (terminate function) early if square is click or winner is found.
-    if (square[i] || result) {
+    //Return (terminate function) early if squares is click or winner is found.
+    if (squares[i] || result) {
       return;
     }
 
-    if (turn) {
-      square[i] = "X";
-    } else {
-      square[i] = "O";
-    }
-    setsquare(square);
+    squares[i] = turn? "X": "O";
+    
+
+    setSquares(squares);
     setTurn(!turn);
   }
 
   //Reseting game.
   function handleResetClick() {
-    setsquare(Array(9).fill(null));
+    setSquares(Array(9).fill(null));
 
     if (result == "X" || result == null) {
       setTurn(true);
@@ -36,12 +34,12 @@ function App() {
   }
 
   //Calling winner function on each render.
-  const result = calculateWinner(square);
+  const result = calculateWinner(squares);
 
   return (
     <>
-      <GameStatus result={result} turn={turn} />
-      <Board square={square} onBoardClick={handleClick} />
+      <GameStatus result={result} turn={turn} squares={squares}/>
+      <Board squares={squares} onBoardClick={handleClick} />
       <ResetButton onResetButtonClick={handleResetClick} />
     </>
   );
