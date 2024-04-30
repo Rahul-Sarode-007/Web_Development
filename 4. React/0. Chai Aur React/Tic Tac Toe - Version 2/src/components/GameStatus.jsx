@@ -1,21 +1,16 @@
 import React, { useEffect, useRef } from "react";
 
-
-
-
 function GameStatus({ result, turn, squares }) {
-
   let status = useRef("");
-  let p1 = useRef("")
-  let p2 = useRef("")
-  let winnerSign = useRef("X")
+  let p1 = useRef("");
+  let p2 = useRef("");
+  let winnerSign = useRef("X");
 
   useEffect(() => {
-    p1.current = prompt("Enter payer 1 name")
-    p2.current = prompt("Enter payer 2 name")
-    console.log(p1.current,p2.current)
-  }, [])
-  
+    p1.current = prompt("Enter payer 1 name");
+    p2.current = prompt("Enter payer 2 name");
+    console.log(p1.current, p2.current);
+  }, []);
 
   const playerName = {
     player1: p1.current,
@@ -33,10 +28,10 @@ function GameStatus({ result, turn, squares }) {
   } else {
     if (result === winnerSign.current) {
       status = `Winner is ${playerName.player1}`;
-      winnerSign.current = "X"
+      winnerSign.current = "X";
     } else {
       status = `Winner is ${playerName.player2}`;
-      winnerSign.current = "O"
+      winnerSign.current = "O";
     }
   }
 
