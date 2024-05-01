@@ -2,35 +2,29 @@ import React, { useEffect, useRef } from "react";
 
 function GameStatus({ result, turn, squares }) {
   let status = useRef("");
-  let p1 = useRef("");
-  let p2 = useRef("");
+  let player1 = useRef("");
+  let player2 = useRef("");
   let winnerSign = useRef("X");
 
   useEffect(() => {
-    p1.current = prompt("Enter payer 1 name");
-    p2.current = prompt("Enter payer 2 name");
-    console.log(p1.current, p2.current);
+    player1.current = prompt("Enter payer 1 name");
+    player2.current = prompt("Enter payer 2 name");
   }, []);
-
-  const playerName = {
-    player1: p1.current,
-    player2: p2.current,
-  };
 
   if (squares.every((square) => square !== null) && result == null) {
     status = "It's a draw!";
   } else if (result === null) {
     if (turn) {
-      status = `Next is: ${playerName.player1}`;
+      status = `Next is: ${player1.current}`;
     } else {
-      status = `Next is: ${playerName.player2}`;
+      status = `Next is: ${player2.current}`;
     }
   } else {
     if (result === winnerSign.current) {
-      status = `Winner is ${playerName.player1}`;
+      status = `Winner is ${player1.current}`;
       winnerSign.current = "X";
     } else {
-      status = `Winner is ${playerName.player2}`;
+      status = `Winner is ${player2.current}`;
       winnerSign.current = "O";
     }
   }

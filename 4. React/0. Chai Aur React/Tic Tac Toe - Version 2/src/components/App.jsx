@@ -13,16 +13,11 @@ function App() {
 
   //Square click callback function.
   function handleClick(i) {
-    //Return (terminate function) early if squares is already clicked or winner is already found.
     if (squares[i] || result) {
       return;
     }
 
-    if (sign === true) {
-      squares[i] = "X";
-    } else {
-      squares[i] = "O";
-    }
+    squares[i] = sign?"X":"O"
 
     setSquares(squares);
     setSign(!sign);
