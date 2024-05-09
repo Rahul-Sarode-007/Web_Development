@@ -13,9 +13,12 @@ function App() {
   const [player1, setPlayer1] = useState("")
   const [player2, setPlayer2] = useState("")
 
-  let winnerSign = useRef("X");
+  let appWinnerSign = useRef("X");
   let score1 =  useRef(0)
   let score2 =  useRef(0)
+
+  //Calling winner function on each render.
+  const result = calculateWinner(squares);
 
   //Square click callback function.
   function handleClick(i) {
@@ -30,30 +33,29 @@ function App() {
     setTurn(!turn);
   }
 
+  
   //Reseting game.
   function handleResetClick() {
     setSquares(Array(9).fill(null));
     setSign(true);
 
-    if (result == winnerSign.current || result == null) {
+    if (result == appWinnerSign.current || result == null) {
       setTurn(true);
-      winnerSign.current = "X";
+      appWinnerSign.current = "X";
       score1.current+=1
     } else {
       setTurn(false);
-      winnerSign.current = "O";
+      appWinnerSign.current = "O";
       score2.current+=1
     }
   }
 
-  //Calling winner function on each render.
-  const result = calculateWinner(squares);
 
   return (
     <>
       <PlayerName setPlayer1={setPlayer1} setPlayer2={setPlayer2}/>
-      <ScoreCard player1={player1} player2={player2} winnerSign={winnerSign.current} result={result} score1={score1} score2={score2}/>
-      <GameStatus result={result} turn={turn} squares={squares} player1={player1} player2={player2}/>
+      <ScoreCard player1={player1} player2={player2} appWinnerSign={appWinnerSign.current} result={result} score1={score1} score2={score2}/>
+      <GameStatus result={result} turn={turn} squares={squares} player1={player1} player2={player2} appWinnerSign={appWinnerSign}/>
       <Board squares={squares} onBoardClick={handleClick} />
       <ResetButton onResetButtonClick={handleResetClick} />
     </>

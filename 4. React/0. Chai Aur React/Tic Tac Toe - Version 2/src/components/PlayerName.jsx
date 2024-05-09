@@ -23,7 +23,6 @@ export default function PlayerName({setPlayer1,setPlayer2}) {
   return (
     <div>
       <div className="container">
-        <button className="hide-modal-logo">X</button>
         <h2 className="start-game-heading">Enter Player's Name</h2>
 
         <div className="player-info">
@@ -40,8 +39,6 @@ export default function PlayerName({setPlayer1,setPlayer2}) {
 
         <button onClick={handleClick} className="start-game">Play Now</button>
       </div>
-
-      <button className="show-modal" >Show Modal</button>
       <script src="script.js"></script>
     </div>
   );

@@ -1,23 +1,11 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
-export default function ScoreCard({player1,player2,winnerSign, score1, score2}) {
-    let sign1 =null, sign2 = null
-
-
-    if(winnerSign==="X"){
-        sign1 = "X"
-        sign2 = "O"
-    }
-
-    if(winnerSign==="O"){
-        sign1 = "O"
-        sign2 = "X"
-    }
+export default function ScoreCard({player1,player2,appWinnerSign, score1, score2}) {
 
   return (
     <div>
-    <h3>{player1||'Player1'} ({sign1}) - {score1.current}</h3>
-    <h3>{player2||'Player2'} ({sign2}) - {score2.current}</h3>
+    <h3>{player1||'Player1'} ({appWinnerSign==="X"?"X":"O"}) - {score1.current}</h3>
+    <h3>{player2||'Player2'} ({appWinnerSign==="O"?"X":"O"}) - {score2.current}</h3>
 </div>
   )
 }
