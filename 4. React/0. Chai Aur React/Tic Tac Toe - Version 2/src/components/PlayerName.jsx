@@ -27,13 +27,11 @@ export default function PlayerName({setPlayer1,setPlayer2}) {
 
         <div className="player-info">
           <label htmlFor="Player1">Player 1</label>
-          <br></br>
           <input onChange={handleInput1} id="Player1" type="text" placeholder="Enter Player 1 Name" />
         </div>
 
         <div className="player-info">
           <label htmlFor="Player2">Player 2</label>
-          <br></br>
           <input onChange={handleInput2} id="Player2" type="text" placeholder="Enter Player 2 Name" />
         </div>
 
