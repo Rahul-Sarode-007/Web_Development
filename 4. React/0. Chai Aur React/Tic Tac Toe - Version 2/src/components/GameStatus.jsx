@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 
-function GameStatus({ result, turn, squares, player1, player2 }) {
-  const statusWinnerSign = useRef("X");
+function GameStatus({ result, turn, squares, player1, player2,appWinnerSign }) {
   let status = useRef("");
 
   if (squares.every((square) => square !== null) && result == null) {
@@ -18,12 +17,10 @@ function GameStatus({ result, turn, squares, player1, player2 }) {
   } 
   
   else {
-    if (result === statusWinnerSign.current) {
+    if (result === appWinnerSign) {
       status = `Winner is ${player1}`;
-      statusWinnerSign.current = "X";
     } else {
       status = `Winner is ${player2}`;
-      statusWinnerSign.current = "O";
     }
   }
 

@@ -54,8 +54,8 @@ function App() {
   return (
     <>
       <PlayerName setPlayer1={setPlayer1} setPlayer2={setPlayer2}/>
-      <ScoreCard player1={player1} player2={player2} appWinnerSign={appWinnerSign.current} result={result} score1={score1} score2={score2}/>
-      <GameStatus result={result} turn={turn} squares={squares} player1={player1} player2={player2} appWinnerSign={appWinnerSign}/>
+      <ScoreCard player1={player1} player2={player2} appWinnerSign={appWinnerSign.current} score1={score1} score2={score2}/>
+      <GameStatus result={result} turn={turn} squares={squares} player1={player1} player2={player2} appWinnerSign={appWinnerSign.current}/>
       <Board squares={squares} onBoardClick={handleClick} />
       <ResetButton onResetButtonClick={handleResetClick} />
     </>
