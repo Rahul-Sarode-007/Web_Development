@@ -1,4 +1,5 @@
 import React, {useRef} from "react";
+import { Link } from "react-router-dom";
 
 export default function PlayerName({setPlayer1,setPlayer2}) {
 
@@ -34,8 +35,9 @@ export default function PlayerName({setPlayer1,setPlayer2}) {
           <label htmlFor="Player2">Player 2</label>
           <input onChange={handleInput2} id="Player2" type="text" placeholder="Enter Player 2 Name" />
         </div>
-
+        {/* <Link to={"/game"}> */}
         <button onClick={handleClick} className="start-game">Play Now</button>
+        {/* </Link> */}
       </div>
       <script src="script.js"></script>
     </div>
