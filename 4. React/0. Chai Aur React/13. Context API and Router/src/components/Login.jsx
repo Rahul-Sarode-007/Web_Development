@@ -1,9 +1,9 @@
 import React, { useContext, useRef } from "react";
-import { contextValue } from "../context/context";
+import { PlayerContext } from "../context/PlayerContext.js";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { setPlayerName } = useContext(contextValue);
+  const { setPlayerName } = useContext(PlayerContext);
   const nameRef = useRef();
   const navigate = useNavigate();
 

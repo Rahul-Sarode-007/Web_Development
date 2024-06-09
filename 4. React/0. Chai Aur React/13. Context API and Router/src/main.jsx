@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import router from './router/router.jsx';
-import { contextValue } from './context/context.js';
+import { PlayerContext } from './context/PlayerContext.js';
 
 
 const Main = () => {
   const [playerName, setPlayerName] = useState("");
 
   return (
-    <contextValue.Provider value={{ setPlayerName, playerName }}>
+    <PlayerContext.Provider value={{ setPlayerName, playerName }}>
       <RouterProvider router={router} />
-    </contextValue.Provider>
+    </PlayerContext.Provider>
   );
 };
 
