@@ -1,24 +1,27 @@
-import React, { StrictMode } from 'react'
+import React, { StrictMode,useState } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './components/App'
 import './index.css'
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import PlayerName from './components/PlayerName'
+
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router/router'
+
+import { contextPropsPlayer } from './context/contextAPI'
 
 
-const router = createBrowserRouter([
-    {
-        path:"/",
-        element:<App/>
-    },
-    {
-        path:"/game",
-        element: <App/>
-    }
-])
+const Main = () => {
+    const [player1, setPlayer1] = useState("Rahul");
+    const [player2, setPlayer2] = useState("Ani");
+  
+  
+    return (
+      <contextPropsPlayer.Provider value={{ setPlayer1, setPlayer2,player1,player2}}>
+        <RouterProvider router={router} />
+      </contextPropsPlayer.Provider>
+    );
+  };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <StrictMode>
-    <RouterProvider router={router} />
+    <Main />
     // </StrictMode>
 )

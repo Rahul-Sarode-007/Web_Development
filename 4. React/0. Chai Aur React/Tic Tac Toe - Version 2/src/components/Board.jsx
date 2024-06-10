@@ -1,7 +1,11 @@
 import React from 'react'
 import Square from './Square'
+import { useContext } from 'react'
+import {contextProps} from "../context/contextAPI"
 
-function Board({squares,onBoardClick}) {
+
+function Board({onBoardClick}) {
+  const {squares} = useContext(contextProps)
   return (
     <div className='board'>
       <div className="squares-row">

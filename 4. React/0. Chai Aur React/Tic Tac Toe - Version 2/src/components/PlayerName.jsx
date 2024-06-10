@@ -1,7 +1,13 @@
-import React, {useRef} from "react";
-import { Link } from "react-router-dom";
+import React, {useRef,useContext} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {contextPropsPlayer} from "../context/contextAPI"
 
-export default function PlayerName({setPlayer1,setPlayer2}) {
+
+export default function PlayerName() {
+
+  const {setPlayer1,setPlayer2} = useContext(contextPropsPlayer)
+  const navigate = useNavigate()
+
 
   let player1 = useRef("");
   let player2 = useRef("");
@@ -18,6 +24,8 @@ export default function PlayerName({setPlayer1,setPlayer2}) {
   const handleClick = () =>{
     setPlayer1(player1)
     setPlayer2(player2)
+    navigate("/maingame")
+    
   }
 
 
@@ -35,7 +43,7 @@ export default function PlayerName({setPlayer1,setPlayer2}) {
           <label htmlFor="Player2">Player 2</label>
           <input onChange={handleInput2} id="Player2" type="text" placeholder="Enter Player 2 Name" />
         </div>
-        {/* <Link to={"/game"}> */}
+        {/* <Link to={"/maingame"}> */}
         <button onClick={handleClick} className="start-game">Play Now</button>
         {/* </Link> */}
       </div>

@@ -1,6 +1,12 @@
 import React, { useRef } from "react";
+import { useContext } from "react";
+import {contextProps, contextPropsPlayer} from "../context/contextAPI"
 
-function GameStatus({ result, turn, squares, player1, player2,appWinnerSign }) {
+function GameStatus({appWinnerSign}) {
+
+  const {result, turn, squares} = useContext(contextProps)
+  const {player1,player2} = useContext(contextPropsPlayer)
+
   let status = useRef("");
 
   if (squares.every((square) => square !== null) && result == null) {

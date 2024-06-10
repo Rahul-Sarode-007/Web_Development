@@ -3,17 +3,16 @@ import Board from "./Board";
 import ResetButton from "./ResetButton";
 import GameStatus from "./GameStatus";
 import calculateWinner from "./winner_function";
-import PlayerName from "./PlayerName";
 import ScoreCard from "./ScoreCard";
 import {contextProps} from "../context/contextAPI"
+import { useContext } from "react";
 
-function App() {
+function MainGame() {
+
+
   const [squares, setSquares] = useState(Array(9).fill(null));
-  const [sign, setSign] = useState(true);
   const [turn, setTurn] = useState(true);
-  
-  const [player1, setPlayer1] = useState("")
-  const [player2, setPlayer2] = useState("")
+  const [sign, setSign] = useState(true);
 
   let appWinnerSign = useRef("X");
   let score1 =  useRef(0)
@@ -55,9 +54,8 @@ function App() {
 
   return (
     <>
-    <contextProps.Provider value={{setPlayer1,setPlayer2,player1,player2,score1,score2,result,turn,squares}}>
+    <contextProps.Provider value={{score1,score2,result,turn,squares}}>
 
-      <PlayerName/>
       <ScoreCard appWinnerSign={appWinnerSign.current}/>
       <GameStatus appWinnerSign={appWinnerSign.current}/>
       <Board onBoardClick={handleClick} />
@@ -68,4 +66,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainGame;

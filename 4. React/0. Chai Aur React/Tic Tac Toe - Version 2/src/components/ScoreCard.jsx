@@ -1,6 +1,14 @@
 import React from 'react'
+import { useContext } from 'react'
+import {contextProps,contextPropsPlayer} from "../context/contextAPI"
 
-export default function ScoreCard({player1,player2,appWinnerSign, score1, score2}) {
+
+export default function ScoreCard({appWinnerSign}) {
+  
+  const {score1,score2} = useContext(contextProps)
+  const {player1,player2} = useContext(contextPropsPlayer)
+
+
 
   return (
     <div>
