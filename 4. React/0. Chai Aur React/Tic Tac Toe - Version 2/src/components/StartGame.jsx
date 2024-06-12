@@ -2,7 +2,7 @@ import React from "react";
 
 import PlayerName from "./PlayerName";
 
-function Game() {
+function StartGame() {
 
   return (
     <>
@@ -11,4 +11,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default StartGame;

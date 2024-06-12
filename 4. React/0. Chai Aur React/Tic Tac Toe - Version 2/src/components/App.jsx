@@ -1,71 +1,23 @@
-import { useState, useRef } from "react";
-import Board from "./Board";
-import ResetButton from "./ResetButton";
-import GameStatus from "./GameStatus";
-import calculateWinner from "./winner_function";
-import PlayerName from "./PlayerName";
-import ScoreCard from "./ScoreCard";
-import {contextProps} from "../context/contextAPI"
+import React, { useState } from 'react'
 
-function App() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [sign, setSign] = useState(true);
-  const [turn, setTurn] = useState(true);
+import { RouterProvider } from 'react-router-dom'
+import { router } from '../router/router'
+
+import { contextPropsPlayer } from '../context/contextAPI'
+
+
+const App = () => {
+    const [player1, setPlayer1] = useState("");
+    const [player2, setPlayer2] = useState("");
   
-  const [player1, setPlayer1] = useState("")
-  const [player2, setPlayer2] = useState("")
-
-  let appWinnerSign = useRef("X");
-  let score1 =  useRef(0)
-  let score2 =  useRef(0)
-
-  //Calling winner function on each render.
-  const result = calculateWinner(squares);
-
-  //Square click callback function.
-  function handleClick(i) {
-    if (squares[i] || result) {
-      return;
-    }
-
-    squares[i] = sign?"X":"O"
-
-    setSquares(squares);
-    setSign(!sign);
-    setTurn(!turn);
-  }
+  
+    return (
+      <contextPropsPlayer.Provider value={{ setPlayer1, setPlayer2,player1,player2}}>
+        <RouterProvider router={router} />
+      </contextPropsPlayer.Provider>
+    );
+  };
 
   
-  //Reseting game.
-  function handleResetClick() {
-    setSquares(Array(9).fill(null));
-    setSign(true);
 
-    if (result == appWinnerSign.current || result == null) {
-      setTurn(true);
-      appWinnerSign.current = "X";
-      score1.current+=1
-    } else {
-      setTurn(false);
-      appWinnerSign.current = "O";
-      score2.current+=1
-    }
-  }
-
-
-  return (
-    <>
-    <contextProps.Provider value={{setPlayer1,setPlayer2,player1,player2,score1,score2,result,turn,squares}}>
-
-      <PlayerName/>
-      <ScoreCard appWinnerSign={appWinnerSign.current}/>
-      <GameStatus appWinnerSign={appWinnerSign.current}/>
-      <Board onBoardClick={handleClick} />
-      <ResetButton onResetButtonClick={handleResetClick} />
-      
-      </contextProps.Provider>
-    </>
-  );
-}
-
-export default App;
+export default App

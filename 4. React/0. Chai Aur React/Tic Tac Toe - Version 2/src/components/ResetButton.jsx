@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ResetButton({onResetButtonClick}) {
   return (
@@ -6,6 +7,10 @@ function ResetButton({onResetButtonClick}) {
       <button onClick={onResetButtonClick} className="reset">
         Reset
       </button>
+      <br />
+      <Link to={"/"}>
+      <button className="reset">Home Page</button>
+      </Link>
     </div>
   )
 }

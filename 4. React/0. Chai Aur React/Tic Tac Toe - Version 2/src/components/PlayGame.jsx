@@ -5,9 +5,8 @@ import GameStatus from "./GameStatus";
 import calculateWinner from "./winner_function";
 import ScoreCard from "./ScoreCard";
 import {contextProps} from "../context/contextAPI"
-import { useContext } from "react";
 
-function MainGame() {
+function PlayGame() {
 
 
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -66,4 +65,4 @@ function MainGame() {
   );
 }
 
-export default MainGame;
+export default PlayGame;
