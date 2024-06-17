@@ -28,7 +28,8 @@ export default function PlayerName() {
   };
 
   return (
-    <div>
+    <div className="outter-container">
+      <img src="\Images\Tic tac toe logo.png" alt="game logo" className="game-logo"/>
       <div className="container">
         <h2 className="start-game-heading">Enter Player's Name</h2>
 
@@ -59,9 +60,8 @@ export default function PlayerName() {
           Play Now
         </button>
         {/* </Link> */}
-        
       </div>
-      <script src="script.js"></script>
+        <p className="copy-right">Rahul Sarode © 2024</p>
     </div>
   );
 }

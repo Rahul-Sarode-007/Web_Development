@@ -1,9 +1,8 @@
 import React from "react";
 
-function Square({index,onSquareClick}) {
-
+function Square({ index, onSquareClick }) {
   return (
-    <button onClick={() => onSquareClick()} className="squares">
+    <button onClick={() => onSquareClick()} className="square">
       {index}
     </button>
   );
