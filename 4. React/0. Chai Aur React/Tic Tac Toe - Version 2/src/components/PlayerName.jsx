@@ -28,6 +28,7 @@ export default function PlayerName() {
   };
 
   return (
+    <div className="player-name-container">
     <div className="outter-container">
       <img src="\Images\Tic tac toe logo.png" alt="game logo" className="game-logo"/>
       <div className="container">
@@ -62,6 +63,7 @@ export default function PlayerName() {
         {/* </Link> */}
       </div>
         <p className="copy-right">Rahul Sarode © 2024</p>
+    </div>
     </div>
   );
 }

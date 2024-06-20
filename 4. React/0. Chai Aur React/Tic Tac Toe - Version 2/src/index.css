@@ -1,3 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  background: linear-gradient(135deg, #f9f9f9, #2a96ee);
+}
+
+.player-name-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outter-container {
+  text-align: center;
+  background-color: #f9f9f9;
+  max-width: 60em;
+  padding: 5em;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #2a96ee;
+
+}
+
+.game-logo {
+  width: 90%;
+}
+
+.container {
+  margin: 5em 0;
+}
+
+.start-game-heading {
+  font-size: 3.5em;
+}
+
+.player-info {
+  margin: 3em 0;
+}
+
+.player-info label {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.player-info input {
+  width: 80%;
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+.player-info input:focus {
+  outline: 1px solid #2a96ee;
+}
+
+.start-game {
+  padding: 1.5em 4em;
+  margin-top: 2em;
+  background-color: #2a96ee;
+  border: none;
+  color: white;
+  border-radius: .3em;
+}
+
+.start-game:hover {
+  background-color: #0d47a1;
+}
+
+.copy-right {
+  color: #1d1c1c;
+  font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************* */
+
 /* * {
     padding: 0;
     margin: 0;
@@ -5,25 +111,25 @@
     font-family: sans-serif;
 }
 
-.squares-row {
+.row {
     display: flex;
     gap: 2px;
     margin-bottom: 2px;
 }
 
-.squares {
+.square {
     height: 50px;
     width: 50px;
     background-color: rgb(216, 226, 231);
 }
 
-.reset {
+.reset-button,.home-button {
     margin-top: 20px;
     margin-left: 25px;
     height: 30px;
     width: 100px;
-}
- */
+} */
+
 
 /* ************************************************** */
 
@@ -94,14 +200,23 @@
   .copy-right{
     margin-top: 100px;
     font-size: 20px;
-  }
+  } */
 
-   */
+
+
+
+
+
+
+
+
+
+
 
 /* ************************************************** */
 
 /* General styling */
-body {
+/* body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f2f5;
   display: flex;
@@ -125,10 +240,10 @@ h1 {
 h2 {
   font-size: 1.5em;
   color: #666;
-}
+} */
 
 /* PlayGame component styling */
-.play-game {
+/* .play-game {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,10 +254,10 @@ h2 {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* ScoreCard styling */
-.score-card {
+/* .score-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -158,10 +273,10 @@ h2 {
   flex: 1;
   text-align: center;
   color: #333;
-}
+} */
 
 /* Game Status styling */
-.game-status {
+/* .game-status {
   width: 100%;
   padding: 15px;
   background-color: #f9f9f9;
@@ -173,10 +288,10 @@ h2 {
 .status-message {
   margin: 0;
   color: #333;
-}
+} */
 
 /* Board styling */
-.board {
+/* .board {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,10 +320,10 @@ h2 {
 .square:hover {
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Reset Button styling */
-.reset-container {
+/* .reset-container {
   text-align: center;
 }
 
@@ -230,4 +345,86 @@ h2 {
 .reset-button:hover,
 .home-button:hover {
   background-color: #0056b3;
+} */
+
+
+/* *********************************** */
+
+/* StartGame and PlayerName component styling */
+/* .outter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 50px 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.game-logo {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+}
+
+.start-game-heading {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.player-info label {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.player-info input {
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.player-info input:focus {
+  border-color: #007bff;
+}
+
+.start-game {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #29579b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+}
+
+.start-game:hover {
+  background-color: #218838;
+}
+
+.copy-right {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #666;
+} */
+
+
+/* ********************************* */
