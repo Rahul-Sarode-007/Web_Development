@@ -11,7 +11,9 @@ html {
 
 body {
   background-color: #f0f0f0;
-  background: linear-gradient(135deg, #f9f9f9, #2a96ee);
+  background: url("/public/Images/Adventure\ tic-tac-toe.jpeg") no-repeat center center fixed;
+  background-size: 100% 100%;
+
 }
 
 .player-name-container {
@@ -24,12 +26,13 @@ body {
 
 .outter-container {
   text-align: center;
-  background-color: #f9f9f9;
+  color: #156688;
+  /* background-color: #f9f9f9; */
   max-width: 60em;
   padding: 5em;
   border-radius: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #2a96ee;
+  /* border: 1px solid #2a96ee; */
 
 }
 
