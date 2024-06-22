@@ -10,10 +10,9 @@ html {
 }
 
 body {
-  background-color: #f0f0f0;
-  background: url("/public/Images/Adventure\ tic-tac-toe.jpeg") no-repeat center center fixed;
+  /* background-color: #f0f0f0; */
+  background: url("/Images/Adventure\ tic-tac-toe.jpeg") no-repeat center center fixed;
   background-size: 100% 100%;
-
 }
 
 .player-name-container {
@@ -26,18 +25,18 @@ body {
 
 .outter-container {
   text-align: center;
-  color: #156688;
+  color: #052b3b;
   /* background-color: #f9f9f9; */
-  max-width: 60em;
+  max-width: 70em;
   padding: 5em;
   border-radius: 1em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   /* border: 1px solid #2a96ee; */
 
 }
 
 .game-logo {
-  width: 90%;
+  width: 100%;
 }
 
 .container {
@@ -45,7 +44,7 @@ body {
 }
 
 .start-game-heading {
-  font-size: 3.5em;
+  font-size: 4em;
 }
 
 .player-info {
@@ -56,34 +55,46 @@ body {
   display: block;
   font-size: 2em;
   margin-bottom: 0.5em;
+  color: #1d1c1c;
 }
 
 .player-info input {
-  width: 80%;
-  padding: 1em;
-  font-size: 1.5em;
+  text-align: center;
+  width: 50%;
+  max-width: 400px;
+  padding: .5em 1em;
+  font-size: 2.4em;
+  border: none;
+  border-radius: 0.5em;
+  background: rgba(255, 255, 255, 0.678);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .player-info input:focus {
-  outline: 1px solid #2a96ee;
+  outline: none;
+  border: 1px solid #2a96ee;
+  box-shadow: 0 0 1px rgba(42, 150, 238, 0.5);
 }
 
 .start-game {
-  padding: 1.5em 4em;
-  margin-top: 2em;
-  background-color: #2a96ee;
+  padding: 1em 2em;
+  margin-top: 1em;
+  background-color: #236c8b;
   border: none;
   color: white;
-  border-radius: .3em;
+  border-radius: .5em;
+  font-size: 2em;
 }
 
 .start-game:hover {
-  background-color: #0d47a1;
+  background-color: #052b3b;
 }
 
 .copy-right {
   color: #1d1c1c;
-  font-size: 2em;
+  font-size: 2.4em;
+  color: #052b3b;
 }
 
 

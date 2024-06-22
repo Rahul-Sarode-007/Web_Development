@@ -41,7 +41,7 @@ export default function PlayerName() {
             onChange={handleInput1}
             id="Player1"
             type="text"
-            placeholder="Enter Player 1 Name"
+            // placeholder="Enter Player 1 Name"
           />
         </div>
 
@@ -52,7 +52,7 @@ export default function PlayerName() {
             onChange={handleInput2}
             id="Player2"
             type="text"
-            placeholder="Enter Player 2 Name"
+            // placeholder="Enter Player 2 Name"
           />
         </div>
 
