@@ -62,8 +62,8 @@ export default function PlayerName() {
         </button>
         {/* </Link> */}
       </div>
-        <p className="copy-right">Rahul Sarode © 2024</p>
     </div>
+        <p className="copy-right">Rahul Sarode © 2024</p>
     </div>
   );
 }
