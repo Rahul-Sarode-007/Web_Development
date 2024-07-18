@@ -6,14 +6,13 @@
 
 html {
   font-size: 10px;
-}
+  font-family: "Montserrat", sans-serif;
 
-body {
-  background: url("/Images/Adventure\ tic-tac-toe.jpeg") no-repeat center center fixed;
-  background-size: 100% 100%;
 }
 
 .player-name-container {
+  background: url("/Images/Adventure\ tic-tac-toe.jpeg") no-repeat center center fixed;
+  background-size: 100% 100%;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -102,8 +101,9 @@ body {
   font-size: 2.4em;
   font-weight: 700;
   color: #040c1e;
-  position: absolute;
-  bottom: 1.5rem;
+  margin-top: 3em;
+  /* position: absolute;
+  bottom: 1.5rem; */
 }
 
 
@@ -126,7 +126,7 @@ h2 {
 
 /* PlayGame component styling */
 
-.play-game {
+/* .play-game {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,14 +137,24 @@ h2 {
   background-color: #236c8b;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* ScoreCard styling */
+
+.play-game{
+  height: 100vh;
+  padding-top: 3em;
+  background-color: #e2e2e2;
+
+}
 .score-card {
+  flex: 0 0 30em;
+  
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
+  height: 25em;
   padding: 15px;
   background-color: #236c8b;
   border-radius: 8px;
@@ -152,42 +162,55 @@ h2 {
   margin-bottom: 20px;
 }
 
-.score-player {
-  flex: 1;
+.player-card h3{
   text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }
 
-.score-player span {
-  font-size: 1.2em;
-  font-weight: bold;
-}
 
 /* Game Status styling */
+
+.status-and-board{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
 .game-status {
-  width: 100%;
+  width: 30%;
   padding: 15px;
   background-color: #236c8b;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
+  margin-left: 34.5%;
+  margin-bottom: 3em;
 }
 
 .status-message {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 3.2em;
   font-weight: bold;
 }
 
 /* Board styling */
 .board {
+  flex: 0 0 40em;
   display: flex;
+  height: 40em;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   background-color: #236c8b;
   padding: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.board-inner-container{
+  display: flex;
 }
 
 .row {
@@ -249,7 +272,7 @@ h2 {
 
 
 /* *********************************** */
-
+/* 
 @media (min-width: 768px) {
   .play-game {
     max-width: 800px;
@@ -285,4 +308,4 @@ h2 {
     font-size: 1.2em;
     padding: 15px 25px;
   }
-}
+} */

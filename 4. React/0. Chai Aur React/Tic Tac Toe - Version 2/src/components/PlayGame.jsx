@@ -1,12 +1,14 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import Board from "./Board";
 import ResetButton from "./ResetButton";
 import GameStatus from "./GameStatus";
 import calculateWinner from "./winner_function";
 import ScoreCard from "./ScoreCard";
-import { contextProps } from "../context/contextAPI";
+import { contextProps, contextPropsPlayer } from "../context/contextAPI";
 
 function PlayGame() {
+  const { player1, player2 } = useContext(contextPropsPlayer);
+
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(true);
   const [sign, setSign] = useState(true);
@@ -46,10 +48,16 @@ function PlayGame() {
 
   return (
     <div className="play-game">
-      <contextProps.Provider value={{ score1, score2, result, turn, squares }}>
-        <ScoreCard appWinnerSign={appWinnerSign.current} />
+      <contextProps.Provider value={{ squares, turn, result }}>
         <GameStatus appWinnerSign={appWinnerSign.current} />
+      <div className="status-and-board">
+        <ScoreCard pin={"yes"} appWinnerSign={appWinnerSign.current} player={player1} score={score1}/>
+
         <Board onBoardClick={handleClick} />
+
+        <ScoreCard pin={"no"} appWinnerSign={appWinnerSign.current} player={player2} score={score2}/>
+        </div>
+
         <ResetButton onResetButtonClick={handleResetClick} />
       </contextProps.Provider>
     </div>
