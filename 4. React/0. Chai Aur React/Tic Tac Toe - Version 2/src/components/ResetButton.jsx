@@ -7,7 +7,7 @@ function ResetButton({ onResetButtonClick }) {
       <button onClick={onResetButtonClick} className="reset-button">
         Reset
       </button>
-      <br />
+
       <Link to={"/"}>
         <button className="home-button">Home Page</button>
       </Link>

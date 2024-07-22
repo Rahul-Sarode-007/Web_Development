@@ -141,12 +141,15 @@ h2 {
 
 /* ScoreCard styling */
 
+/* PlayGame component styling */
 .play-game{
   height: 100vh;
   padding-top: 3em;
   background-color: #e2e2e2;
 
 }
+
+/* ScoreCard styling */
 .score-card {
   flex: 0 0 30em;
   
@@ -170,7 +173,6 @@ h2 {
 
 
 /* Game Status styling */
-
 .status-and-board{
   display: flex;
   justify-content: space-evenly;
@@ -254,7 +256,7 @@ h2 {
 .home-button {
   display: inline-block;
   margin: 10px;
-  padding: 10px 20px;
+  padding: 20px 30px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -262,7 +264,7 @@ h2 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 2.4em;
 }
 
 .reset-button:hover,
