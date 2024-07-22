@@ -19,6 +19,8 @@ function PlayGame() {
 
   const result = calculateWinner(squares);
 
+
+  //Square click functionality
   function handleClick(i) {
     if (squares[i] || result) {
       return;
@@ -31,6 +33,8 @@ function PlayGame() {
     setTurn(!turn);
   }
 
+
+  //Reset button functionality
   function handleResetClick() {
     setSquares(Array(9).fill(null));
     setSign(true);
@@ -52,7 +56,7 @@ function PlayGame() {
 
   return (
     <div className="play-game">
-      <contextProps.Provider value={{ squares, turn, result }}>
+      <contextProps.Provider value={{ squares, turn, result,setTurn }}>
         <GameStatus appWinnerSign={appWinnerSign.current} />
 
         <Board onBoardClick={handleClick} />

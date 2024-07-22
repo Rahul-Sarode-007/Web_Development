@@ -4,9 +4,8 @@ import { contextProps, contextPropsPlayer } from "../context/contextAPI";
 
 import ScoreCard from "./ScoreCard";
 
-
 function GameStatus({}) {
-  const { result, turn, squares } = useContext(contextProps);
+  const { result, turn, squares, setTurn } = useContext(contextProps);
   const { player1, player2 } = useContext(contextPropsPlayer);
 
   let status = useRef("");
@@ -16,14 +15,20 @@ function GameStatus({}) {
 
   if (squares.every((square) => square !== null) && result == null) {
     status = "It's a draw!";
-  } else if (result === null) {
+    setTurn(!turn);
+  } 
+  
+  //Display next turn player name
+  else if (result === null) {
     if (turn) {
       status = `Next is: ${player1}`;
     } else {
       status = `Next is: ${player2}`;
     }
-  } else {
-    //Display winner name
+  }
+
+  //Display winner name
+  else {
     if (result === appWinnerSign.current) {
       status = `Winner is ${player1} 🥳`;
     } else {
@@ -40,16 +45,13 @@ function GameStatus({}) {
     }
   }
 
-  
-
-
   return (
     <div>
-      <div className="game-status">
+      <div className="game-status-container">
         <h1 className="status-message">{status}</h1>
       </div>
 
-      <div className="status-and-board">
+      <div className="scorecard-container">
         <ScoreCard
           pin={"yes"}
           appWinnerSign={appWinnerSign.current}
@@ -64,8 +66,6 @@ function GameStatus({}) {
           score={score2}
         />
       </div>
-
-      
     </div>
   );
 }

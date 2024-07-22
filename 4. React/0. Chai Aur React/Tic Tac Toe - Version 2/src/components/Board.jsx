@@ -6,6 +6,7 @@ import { contextProps } from "../context/contextAPI";
 function Board({ onBoardClick }) {
   const { squares } = useContext(contextProps);
   return (
+    <div className="board-container">
     <div className="board">
       <div className="row">
         <Square index={squares[0]} onSquareClick={() => onBoardClick(0)} />
@@ -24,6 +25,7 @@ function Board({ onBoardClick }) {
         <Square index={squares[7]} onSquareClick={() => onBoardClick(7)} />
         <Square index={squares[8]} onSquareClick={() => onBoardClick(8)} />
       </div>
+    </div>
     </div>
   );
 }
