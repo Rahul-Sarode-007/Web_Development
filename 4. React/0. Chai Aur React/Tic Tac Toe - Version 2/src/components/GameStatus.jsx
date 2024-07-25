@@ -2,20 +2,16 @@ import React, { useRef } from "react";
 import { useContext } from "react";
 import { contextProps, contextPropsPlayer } from "../context/contextAPI";
 
-import ScoreCard from "./ScoreCard";
-
-function GameStatus({}) {
-  const { result, turn, squares, setTurn } = useContext(contextProps);
+function GameStatus({appWinnerSign}) {
+  const { squares, turn, setTurn, result } = useContext(contextProps);
   const { player1, player2 } = useContext(contextPropsPlayer);
 
   let status = useRef("");
-  let appWinnerSign = useRef("X");
-  let score1 = useRef(0);
-  let score2 = useRef(0);
 
+  //Draw Status
   if (squares.every((square) => square !== null) && result == null) {
     status = "It's a draw!";
-    setTurn(!turn);
+      setTurn(!turn);
   } 
   
   //Display next turn player name
@@ -29,20 +25,20 @@ function GameStatus({}) {
 
   //Display winner name
   else {
-    if (result === appWinnerSign.current) {
+    if (result === appWinnerSign) {
       status = `Winner is ${player1} 🥳`;
     } else {
       status = `Winner is ${player2} 🥳`;
     }
 
     //Updating score and sign
-    if (result === appWinnerSign.current) {
-      appWinnerSign.current = "X";
-      score1.current += 1;
-    } else {
-      appWinnerSign.current = "O";
-      score2.current += 1;
-    }
+    // if (result === appWinnerSign) {
+    //   appWinnerSign = "X";
+    //   score1 += 1;
+    // } else {
+    //   appWinnerSign = "O";
+    //   score2 += 1;
+    // }
   }
 
   return (
@@ -51,7 +47,7 @@ function GameStatus({}) {
         <h1 className="status-message">{status}</h1>
       </div>
 
-      <div className="scorecard-container">
+      {/* <div className="scorecard-container">
         <ScoreCard
           pin={"yes"}
           appWinnerSign={appWinnerSign.current}
@@ -59,13 +55,16 @@ function GameStatus({}) {
           score={score1}
         />
 
+        <Board onBoardClick={onBoardClicks} />
+
+
         <ScoreCard
           pin={"no"}
           appWinnerSign={appWinnerSign.current}
           player={player2}
           score={score2}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

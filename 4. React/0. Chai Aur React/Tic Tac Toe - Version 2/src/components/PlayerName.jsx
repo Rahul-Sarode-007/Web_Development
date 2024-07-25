@@ -18,7 +18,7 @@ export default function PlayerName() {
   };
 
   const handleClick = () => {
-    if (typeof(player1) === "string" && typeof(player2) === "string") {
+    if (typeof player1 === "string" && typeof player2 === "string") {
       setPlayer1(player1);
       setPlayer2(player2);
       navigate("/game");
@@ -28,42 +28,53 @@ export default function PlayerName() {
   };
 
   return (
-    <div className="player-name-container">
-    <div className="outter-container">
-      <img src="\Images\Tic tac toe logo.png" alt="game logo" className="game-logo"/>
-      <div className="container">
-        <h2 className="start-game-heading">Enter Player's Name</h2>
-
-        <div className="player-info">
-          <label htmlFor="Player1">Player 1</label>
-          <input
-            autoComplete="off"
-            onChange={handleInput1}
-            id="Player1"
-            type="text"
-            // placeholder="Enter Player 1 Name"
+    <div className="home-screen-bg">
+      <div className="home-screen-container">
+        <div className="logo-container">
+          <img
+            src="\Images\Tic tac toe logo.png"
+            alt="game logo"
+            className="game-logo"
           />
         </div>
+        <div className="login-window-container">
+          <div className="heading-container">
+            <h2 className="start-game-heading">Enter Player's Name</h2>
+          </div>
 
-        <div className="player-info">
-          <label htmlFor="Player2">Player 2</label>
-          <input
-            autoComplete="off"
-            onChange={handleInput2}
-            id="Player2"
-            type="text"
-            // placeholder="Enter Player 2 Name"
-          />
+          <div className="player-info">
+            <label htmlFor="Player1">Player 1</label>
+            <input
+              autoComplete="off"
+              onChange={handleInput1}
+              id="Player1"
+              type="text"
+              // placeholder="Enter Player 1 Name"
+            />
+          </div>
+
+          <div className="player-info">
+            <label htmlFor="Player2">Player 2</label>
+            <input
+              autoComplete="off"
+              onChange={handleInput2}
+              id="Player2"
+              type="text"
+              // placeholder="Enter Player 2 Name"
+            />
+          </div>
+          <div className="play-game-button-container">
+            {/* <Link to={"/maingame"}> */}
+            <button onClick={handleClick} className="play-game-button">
+              Play Now
+            </button>
+            {/* </Link> */}
+          </div>
         </div>
-
-        {/* <Link to={"/maingame"}> */}
-        <button onClick={handleClick} className="start-game">
-          Play Now
-        </button>
-        {/* </Link> */}
+        <div className="copy-right-container">
+          <p className="copy-right">Rahul Sarode © 2024</p>
+        </div>
       </div>
-        <p className="copy-right">Rahul Sarode © 2024</p>
-    </div>
     </div>
   );
 }
