@@ -297,12 +297,12 @@ body{
 
 
   /* Game Status styling */
-  .game-status-container {
-    /* width: 60vw;
+  /* .game-status-container {
+    width: 60vw;
     transform: translateX(0);
     margin-left: 20%;
-    margin-bottom: 30px; */
-  }
+    margin-bottom: 30px;
+  } */
 
   .status-message {
     font-size: 32px;

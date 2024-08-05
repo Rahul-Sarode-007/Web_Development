@@ -58,7 +58,7 @@ function PlayGame() {
     <div className="play-game">
       <contextProps.Provider value={{ squares, turn, setTurn, result }}>
         
-        <GameStatus appWinnerSign={appWinnerSign.current}/>
+        {/* <GameStatus appWinnerSign={appWinnerSign.current}/> */}
 
 
         <div className="scorecard-and-board">
