@@ -1,10 +1,12 @@
 import { useState, useRef, useContext } from "react";
 import GameStatus from "./GameStatus";
+import Logo from "./Logo";
 import ScoreCard from "./ScoreCard";
 import Board from "./Board";
 import ResetButton from "./ResetButton";
 import calculateWinner from "./winner_function";
 import { contextProps, contextPropsPlayer } from "../context/contextAPI";
+import CopyRight from "./CopyRight";
 
 function PlayGame() {
   const { player1, player2 } = useContext(contextPropsPlayer);
@@ -19,7 +21,6 @@ function PlayGame() {
 
   const result = calculateWinner(squares);
 
-
   //Square click functionality
   function handleClick(i) {
     if (squares[i] || result) {
@@ -32,7 +33,6 @@ function PlayGame() {
     setSign(!sign);
     setTurn(!turn);
   }
-
 
   //Reset button functionality
   function handleResetClick() {
@@ -57,32 +57,33 @@ function PlayGame() {
   return (
     <div className="play-game">
       <contextProps.Provider value={{ squares, turn, setTurn, result }}>
-        
         {/* <GameStatus appWinnerSign={appWinnerSign.current}/> */}
+        <div className="play-game-flex-container">
+          <Logo />
+          <div className="scorecard-and-board">
+            <ScoreCard
+              pin={"yes"}
+              player={player1}
+              appWinnerSign={appWinnerSign.current}
+              score={score1.current}
+            />
 
+            <Board
+              onBoardClick={handleClick}
+              appWinnerSign={appWinnerSign.current}
+            />
 
-        <div className="scorecard-and-board">
-          
-          <ScoreCard
-            pin={"yes"}
-            player={player1}
-            appWinnerSign={appWinnerSign.current}
-            score={score1.current}
-          />
+            <ScoreCard
+              pin={"no"}
+              player={player2}
+              appWinnerSign={appWinnerSign.current}
+              score={score2.current}
+            />
+          </div>
 
-          <Board onBoardClick={handleClick} appWinnerSign={appWinnerSign.current}/>
-
-          <ScoreCard
-            pin={"no"}
-            player={player2}
-            appWinnerSign={appWinnerSign.current}
-            score={score2.current}
-          />
-
+          <ResetButton onResetButtonClick={handleResetClick} />
+          <CopyRight />
         </div>
-
-        <ResetButton onResetButtonClick={handleResetClick} />
-
       </contextProps.Provider>
     </div>
   );

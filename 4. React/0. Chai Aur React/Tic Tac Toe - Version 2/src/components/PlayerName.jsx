@@ -1,6 +1,8 @@
 import React, { useRef, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { contextPropsPlayer } from "../context/contextAPI";
+import Logo from "./Logo";
+import CopyRight from "./CopyRight";
 
 export default function PlayerName() {
   const { setPlayer1, setPlayer2 } = useContext(contextPropsPlayer);
@@ -30,13 +32,7 @@ export default function PlayerName() {
   return (
     <div className="home-screen-bg">
       <div className="home-screen-container">
-        <div className="logo-container">
-          <img
-            src="\Images\Tic tac toe logo.png"
-            alt="game logo"
-            className="game-logo"
-          />
-        </div>
+        <Logo/>
         <div className="login-window-container">
           <div className="heading-container">
             <h2 className="start-game-heading">Enter Player's Name</h2>
@@ -71,9 +67,7 @@ export default function PlayerName() {
             {/* </Link> */}
           </div>
         </div>
-        <div className="copy-right-container">
-          <p className="copy-right">Rahul Sarode © 2024</p>
-        </div>
+        <CopyRight/>
       </div>
     </div>
   );
