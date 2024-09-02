@@ -1,5 +1,4 @@
 import { useState, useRef, useContext } from "react";
-import GameStatus from "./GameStatus";
 import Logo from "./Logo";
 import ScoreCard from "./ScoreCard";
 import Board from "./Board";

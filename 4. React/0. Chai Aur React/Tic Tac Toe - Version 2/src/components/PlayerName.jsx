@@ -67,7 +67,7 @@ export default function PlayerName() {
             {/* </Link> */}
           </div>
         </div>
-        <CopyRight/>
+        <CopyRight />
       </div>
     </div>
   );

@@ -8,12 +8,12 @@ export default function ScoreCard({ pin, player, appWinnerSign, score }) {
   const { squares, turn, setTurn, result } = useContext(contextProps);
 
   const signXColor = {
-    color: "#f44336",
+    color: "#E74C3C",
     fontWeight: "900",
   };
 
   const signOColor = {
-    color: "#2196f3",
+    color: "#3498DB",
     fontWeight: "700",
   };
 

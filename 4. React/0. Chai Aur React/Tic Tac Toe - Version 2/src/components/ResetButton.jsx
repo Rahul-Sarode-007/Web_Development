@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function ResetButton({ onResetButtonClick }) {
   return (
-    <div className="reset-container">
+    <div className="button-container">
       <button onClick={onResetButtonClick} className="reset-button">
         Reset
       </button>
